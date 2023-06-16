@@ -1,7 +1,9 @@
 package com.example.digitalhealthcaresystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -28,11 +30,10 @@ public class PatientInformationFormController {
     }
 
     @FXML
-    public void handleGoToDashboardButton() {
-        goToDashboardButton.setOnAction(event1 -> {
-            DashboardController dashboardController = new DashboardController();
-            dashboardController.loadDashboardView(new Stage());
-        });
+    public void handleGoToDashboardButton(ActionEvent event) {
+        DashboardController dashboardController = new DashboardController();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        dashboardController.loadDashboardView(stage);
     }
 
     @FXML

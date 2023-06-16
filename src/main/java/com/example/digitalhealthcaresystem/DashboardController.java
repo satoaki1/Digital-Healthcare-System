@@ -1,7 +1,9 @@
 package com.example.digitalhealthcaresystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -39,43 +41,38 @@ public class DashboardController {
     private Button exitButton;
 
     @FXML
-    public void handleMedicalHistoryLink() {
+    public void handleMedicalHistoryLink(ActionEvent event) {
         PatientHistoryFormController patientHistoryFormController = new PatientHistoryFormController();
-        medicalHistoryLink.setOnAction(event -> {
-            patientHistoryFormController.showPatientHistoryForm(new Stage());
-        });
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        patientHistoryFormController.showPatientHistoryForm(stage);
     }
 
     @FXML
-    public void handleTreatmentCourseLink() {
+    public void handleTreatmentCourseLink(ActionEvent event) {
         TreatmentCourseFormController treatmentCourseFormController = new TreatmentCourseFormController();
-        treatmentCourseLink.setOnAction(event -> {
-            treatmentCourseFormController.showTreatmentCourseForm(new Stage());
-        });
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        treatmentCourseFormController.showTreatmentCourseForm(stage);
     }
 
     @FXML
-    public void handleMedicalReviewLink() {
+    public void handleMedicalReviewLink(ActionEvent event) {
         MedicalReviewFormController medicalReviewFormController = new MedicalReviewFormController();
-        medicalReviewLink.setOnAction(event -> {
-            medicalReviewFormController.showMedicalReviewForm(new Stage());
-        });
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        medicalReviewFormController.showMedicalReviewForm(stage);
     }
 
     @FXML
-    public void handleDispensaryLink() {
+    public void handleDispensaryLink(ActionEvent event) {
         DispensaryFormController dispensaryFormController = new DispensaryFormController();
-        dispensaryLink.setOnAction(event -> {
-            dispensaryFormController.showDispensaryForm(new Stage());
-        });
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        dispensaryFormController.showDispensaryForm(stage);
     }
 
     @FXML
-    public void handleDataStorageSystemLink() {
+    public void handleDataStorageSystemLink(ActionEvent event) {
         DataStorageFormController dataStorageFormController = new DataStorageFormController();
-        dataStorageSystemLink.setOnAction(event -> {
-            dataStorageFormController.showDataStorageView(new Stage());
-        });
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        dataStorageFormController.showDataStorageView(stage);
     }
 
     @FXML
