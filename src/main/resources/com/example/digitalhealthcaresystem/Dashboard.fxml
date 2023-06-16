@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.DashboardController">
+   <children>
+      <Pane layoutX="3.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="594.0" style="-fx-background-color: #6633CC; -fx-background-radius: 0 0 7 7;" />
+      <Pane layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="558.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 20 20 20;">
+         <children>
+            <Pane layoutX="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="470.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 0 7 7 0;">
+               <children>
+                  <Text fill="#6633cc" layoutX="16.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Pane layoutX="17.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="189.0" style="-fx-background-color: #BC8F8F; -fx-background-radius: 10 10 10 10;">
+                     <children>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Dr">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="10.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's your overview">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="119.0" layoutY="8.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="17.0" layoutY="114.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="144.0" prefWidth="189.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 10 10 10 10;">
+                     <children>
+                        <Text layoutX="75.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GO TO" />
+                        <Hyperlink fx:id="medicalHistoryLink" layoutX="47.0" layoutY="33.0" onAction="#handleMedicalHistoryLink" text="Medical History" textFill="#6633cc" />
+                        <Hyperlink fx:id="treatmentCourseLink" layoutX="39.0" layoutY="53.0" onAction="#handleTreatmentCourseLink" text="Treatment Course" textFill="#6633cc" />
+                        <Hyperlink fx:id="medicalReviewLink" layoutX="46.0" layoutY="73.0" onAction="#handleMedicalReviewLink" text="Medical Review" textFill="#6633cc" />
+                        <Hyperlink fx:id="dispensaryLink" layoutX="58.0" layoutY="93.0" onAction="#handleDispensaryLink" text="Dispensary" textFill="#6633cc" />
+                        <Hyperlink fx:id="dataStorageSystemLink" layoutX="32.0" layoutY="113.0" onAction="#handleDataStorageSystemLink" text="Data Storage System" textFill="#6633cc" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="17.0" layoutY="267.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="189.0" style="-fx-background-color: #6633CC; -fx-background-radius: 10 10 10 10;">
+                     <children>
+                        <Button layoutX="8.0" layoutY="7.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Support" textFill="#6633cc">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="8.0" layoutY="41.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Guide" textFill="#6633cc">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="223.0" layoutY="266.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="230.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 10 10 10 10;">
+                     <children>
+                        <TextField layoutX="22.0" layoutY="38.0" prefHeight="27.0" prefWidth="187.0" promptText="Enter Name or ID" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" />
+                        <Text fill="#6633cc" layoutX="24.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Information" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <DatePicker layoutX="223.0" layoutY="40.0" />
+               </children>
+            </Pane>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="87.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 7 0 0 7;">
+               <children>
+                  <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/MedicalMark.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="goToHomeButton" layoutX="20.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleGoToHomeButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="goToCalenderButton" layoutX="20.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleGoToCalenderButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/calendar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="goToDashboardButton" layoutX="20.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleGoToDashboardButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/dashboard icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="exitButton" layoutX="20.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 5 5 5 5;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.LoginFormController">
+   <children>
+      <Pane layoutX="3.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="594.0" style="-fx-background-color: #6633CC;" />
+      <Pane layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="558.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 20 20 20;">
+         <children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="360.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 0 0 20;">
+               <children>
+                  <Text fill="BLACK" layoutX="148.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="usernameField" layoutX="75.0" layoutY="95.0" prefHeight="30.0" prefWidth="210.0" promptText="Username" style="-fx-background-radius: 20 20 20 20;" />
+                  <PasswordField fx:id="passwordField" layoutX="75.0" layoutY="134.0" prefHeight="30.0" prefWidth="210.0" promptText="Password" style="-fx-background-radius: 20 20 20 20;" />
+                  <Button fx:id="signInButton" layoutX="110.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleSignInButton" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #6633CC; -fx-background-radius: 15 15 15 15;" text="Sign In" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="168.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="97.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login with your socials:">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="loginWithGoogleButton" layoutX="110.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleLoginWithGoogleButton" prefHeight="27.0" prefWidth="27.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/ForLoginPage/google.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="loginWithFacebookButton" layoutX="162.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleLoginWithFacebookButton" prefHeight="30.0" prefWidth="36.0">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/ForLoginPage/facebook icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="loginWithInstagramButton" layoutX="212.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleLoginWithInstagramButton" prefHeight="28.0" prefWidth="38.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/ForLoginPage/instagram.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="359.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="199.0" style="-fx-background-color: #BC8F8F; -fx-background-radius: 0 20 20 0;">
+               <children>
+                  <Text fill="WHITE" layoutX="43.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME">
+                     <font>
+                        <Font name="Arial Black" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="148.0" fitWidth="205.0" layoutX="26.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/MedicalMark.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="userSupportButton" layoutX="30.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleUserSupportButton" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #6633CC; -fx-background-radius: 15 15 15 15;" text="User Support" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>
