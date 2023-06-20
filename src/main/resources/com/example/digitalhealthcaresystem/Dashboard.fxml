@@ -39,7 +39,7 @@
                   <Pane layoutX="17.0" layoutY="114.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="144.0" prefWidth="189.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 10 10 10 10;">
                      <children>
                         <Text layoutX="75.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GO TO" />
-                        <Hyperlink fx:id="medicalHistoryLink" layoutX="47.0" layoutY="33.0" onAction="#handleMedicalHistoryLink" text="Medical History" textFill="#6633cc" />
+                        <Hyperlink fx:id="medicalHistoryLink" layoutX="47.0" layoutY="33.0" onAction="#handlePatientHistoryLink" text="Patient History" textFill="#6633cc" />
                         <Hyperlink fx:id="treatmentCourseLink" layoutX="39.0" layoutY="53.0" onAction="#handleTreatmentCourseLink" text="Treatment Course" textFill="#6633cc" />
                         <Hyperlink fx:id="medicalReviewLink" layoutX="46.0" layoutY="73.0" onAction="#handleMedicalReviewLink" text="Medical Review" textFill="#6633cc" />
                         <Hyperlink fx:id="dispensaryLink" layoutX="58.0" layoutY="93.0" onAction="#handleDispensaryLink" text="Dispensary" textFill="#6633cc" />
@@ -80,14 +80,14 @@
                         <Image url="@Images/MedicalMark.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="goToHomeButton" layoutX="20.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleGoToHomeButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                  <Button fx:id="goToDashboardButton" layoutX="20.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleGoToDashboardButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/home.png" />
+                              <Image url="@Images/dashboard icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -100,18 +100,6 @@
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Images/calendar.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="goToDashboardButton" layoutX="20.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleGoToDashboardButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
-                     <font>
-                        <Font name="Arial Bold" size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Images/dashboard icon.png" />
                            </image>
                         </ImageView>
                      </graphic>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.PatientInformationFormController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.EditPatientInformationFormController">
    <children>
       <Pane layoutX="3.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="594.0" style="-fx-background-color: #6633CC;" />
       <Pane layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="558.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 20 20 20;">
@@ -18,22 +17,31 @@
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Text>
+                  <TextField fx:id="nameField" layoutX="86.0" layoutY="64.0" prefHeight="27.0" prefWidth="140.0" promptText="Name" />
+                  <Text layoutX="46.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                  <TextField fx:id="ageField" layoutX="308.0" layoutY="64.0" prefHeight="27.0" prefWidth="140.0" promptText="Age" />
+                  <Text layoutX="280.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+                  <TextField fx:id="bloodTypeField" layoutX="86.0" layoutY="101.0" prefHeight="27.0" prefWidth="140.0" promptText="Blood Type" />
+                  <Text layoutX="17.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blood Type" />
+                  <TextField fx:id="heightField" layoutX="308.0" layoutY="101.0" prefHeight="27.0" prefWidth="140.0" promptText="Height" />
+                  <Text layoutX="264.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height" />
+                  <TextField fx:id="weightField" layoutX="86.0" layoutY="138.0" prefHeight="27.0" prefWidth="140.0" promptText="Weight" />
+                  <Text layoutX="39.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" />
+                  <TextField fx:id="genderField" layoutX="308.0" layoutY="138.0" prefHeight="27.0" prefWidth="140.0" promptText="Gender" />
+                  <Text layoutX="260.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
+                  <TextField fx:id="bloodPressureField" layoutX="86.0" layoutY="175.0" prefHeight="27.0" prefWidth="140.0" promptText="Blood Pressure" />
+                  <Text layoutX="57.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="B.P." />
+                  <TextField fx:id="occupationField" layoutX="308.0" layoutY="175.0" prefHeight="27.0" prefWidth="140.0" promptText="Occupation" />
+                  <Text layoutX="237.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation" />
+                  <TextField fx:id="addressField" layoutX="86.0" layoutY="212.0" prefHeight="27.0" prefWidth="362.0" promptText="Address" />
+                  <Text layoutX="31.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+                  <TextField fx:id="contactNoField" layoutX="86.0" layoutY="249.0" prefHeight="27.0" prefWidth="362.0" promptText="Emergency Contact Number" />
+                  <Text layoutX="12.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No." />
+                  <Hyperlink fx:id="saveLink" layoutX="216.5" layoutY="298.0" text="Save" onAction="#handleSaveLink"/>
                </children>
             </Pane>
             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="87.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 0 0 20;">
                <children>
-                  <Button fx:id="goToHomeButton" layoutX="20.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleGoToHomeButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
-                     <font>
-                        <Font name="Arial Bold" size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Images/home.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <Button fx:id="goToCalenderButton" layoutX="20.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleGoToCalenderButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
@@ -46,7 +54,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="goToDashboardButton" layoutX="20.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleGoToDashboardButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                  <Button fx:id="goToDashboardButton" layoutX="20.0" layoutY="86.0" mnemonicParsing="false" onAction="#handleGoToDashboardButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
                      <font>
                         <Font name="Arial Bold" size="13.0" />
                      </font>
