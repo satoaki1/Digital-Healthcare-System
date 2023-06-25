@@ -60,14 +60,19 @@
                         </Button>
                      </children>
                   </Pane>
-                  <Pane layoutX="223.0" layoutY="266.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="230.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 10 10 10 10;">
+                  <Pane layoutX="223.0" layoutY="239.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="230.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 10 10 10 10;">
                      <children>
-                        <TextField layoutX="22.0" layoutY="38.0" prefHeight="27.0" prefWidth="187.0" promptText="Enter Name or ID" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" />
                         <Text fill="#6633cc" layoutX="24.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Information" textAlignment="CENTER">
                            <font>
                               <Font name="Arial Bold" size="20.0" />
                            </font>
                         </Text>
+                        <TextField fx:id="patientField" layoutX="22.0" layoutY="38.0" prefHeight="27.0" prefWidth="187.0" promptText="Enter Name or ID" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" />
+                        <Button fx:id="submitButton" layoutX="84.82" layoutY="70.0" mnemonicParsing="false" style="-fx-background-color: #6633CC;" text="Search" textFill="WHITE" onAction="#handleSearchButton">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                   <DatePicker layoutX="223.0" layoutY="40.0" />
