@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.CreatePatientInformationFormController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.PatientForms.CreatePatientInformationFormController">
    <children>
       <Pane layoutX="3.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="594.0" style="-fx-background-color: #6633CC;" />
       <Pane layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="558.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 20 20 20;">
@@ -50,7 +50,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/calendar.png" />
+                              <Image url="@../Images/calendar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -62,7 +62,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/dashboard icon.png" />
+                              <Image url="@../Images/dashboard icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -74,14 +74,14 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/exit.png" />
+                              <Image url="@../Images/exit.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/MedicalMark.png" />
+                        <Image url="@../Images/MedicalMark.png" />
                      </image>
                   </ImageView>
                </children>
