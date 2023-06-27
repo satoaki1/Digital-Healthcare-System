@@ -20,7 +20,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class CreatePatientInformationFormController {
-    private static final String FILE_PATH = "patients.txt";
+    private static final String FILE_PATH = "Data/patients.txt";
 
     @FXML
     private TextField nameField;
@@ -156,12 +156,11 @@ public class CreatePatientInformationFormController {
     }
 
     public static String findExistingID() {
-        String filePath = "patients.txt"; // Replace with the actual file path
 
         Set<String> existingIDs = new HashSet<>();
 
         // Read the existing IDs from the text file
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String id = line.split(",")[0]; // Assuming the ID is the first element in each line
