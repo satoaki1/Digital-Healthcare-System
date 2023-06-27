@@ -109,7 +109,6 @@ public class DataStorageController {
 
     @FXML
     public void showDataStorageView(Stage stage) {
-        DashboardController dashboardController = new DashboardController();
         try {
             // Load the FXML file and create a root parent
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/DataStorageDocuments/DataStorage.fxml"));
