@@ -24,3 +24,4 @@ P025,Mohamed Fahad Farhan,21,B+,180,70,Male,110,Student,Bandar Sunway Subang Jay
 P026,Aaron Peter,20,O-,170,73,Male,100,Student,Bandar Sunway Subang Jaya Selangor malaysia,01123456789
 P027,Ethan Wang,20,A+,170,60,Male,100,Student,lkjhlkjhkljhlkjh,012344556789
 P028,Noah's Ark,950,B-,400,2,Male,100,Farmer,Methopotamia Irac,01611246950
+P002,Daniel Leeq,41,AB+,170,60,Male,100,IT Engineer,ABCDEFG,0123456789
