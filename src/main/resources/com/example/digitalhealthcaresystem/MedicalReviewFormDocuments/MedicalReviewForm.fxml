@@ -29,7 +29,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/calendar.png" />
+                              <Image url="@../Images/calendar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -41,7 +41,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/dashboard icon.png" />
+                              <Image url="@../Images/dashboard icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -53,14 +53,14 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/exit.png" />
+                              <Image url="@../Images/exit.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/MedicalMark.png" />
+                        <Image url="@../Images/MedicalMark.png" />
                      </image>
                   </ImageView>
                </children>
