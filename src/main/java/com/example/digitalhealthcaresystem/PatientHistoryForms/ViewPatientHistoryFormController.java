@@ -98,7 +98,9 @@ public class ViewPatientHistoryFormController {
 
     @FXML
     public void handleDeleteButton(ActionEvent event) {
-
+        DeletePatientHistoryFormController deletePatientHistoryFormController = new DeletePatientHistoryFormController();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        deletePatientHistoryFormController.showDeletePatientHistory(stage);
     }
 
     public void searchPatientHistory(String patientRecords) {

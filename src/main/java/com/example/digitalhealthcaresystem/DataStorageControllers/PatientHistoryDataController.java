@@ -1,8 +1,10 @@
-package com.example.digitalhealthcaresystem.PatientHistoryForms;
+package com.example.digitalhealthcaresystem.DataStorageControllers;
 
 import com.example.digitalhealthcaresystem.CalenderFormController;
 import com.example.digitalhealthcaresystem.DashboardController;
 import com.example.digitalhealthcaresystem.PatientForms.ViewPatientInformationFormController;
+import com.example.digitalhealthcaresystem.PatientHistoryForms.CreatePatientHistoryFormController;
+import com.example.digitalhealthcaresystem.PatientHistoryForms.ViewPatientHistoryFormController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.BufferedReader;
@@ -19,9 +20,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class PatientHistoryFormController {
+public class PatientHistoryDataController {
 
-    private static final String FILE_PATH = "Data/patientHistories.txt";
+    private static final String FILE_PATH = "Data/patients.txt";
 
     @FXML
     private Button addNewButton;
@@ -99,7 +100,7 @@ public class PatientHistoryFormController {
         });
     }
 
-    // Updating the patient History list by clearing the current items in listview then opens patients.txt, reads each line, and adds each line as a new item in the listView.
+    // Updating the patient list by clearing the current items in listview then opens patients.txt, reads each line, and adds each line as a new item in the listView.
     private void updatePatientHistoryList() {
         listView.getItems().clear();
 
@@ -124,8 +125,7 @@ public class PatientHistoryFormController {
         createPatientHistoryFormController.showCreatePatientHistoryForm(stage);
     }
 
-    @FXML
-    public void showPatientHistoryForm(Stage stage) {
+    public void showPatientHistoryDataForm(Stage stage) {
         try {
             // Load the FXML file and create a root parent
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/PatientHistoryFormDocuments/PatientHistoryFormList.fxml"));
