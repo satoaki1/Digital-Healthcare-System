@@ -49,7 +49,7 @@ public class MedicalReviewFormController {
     public void showMedicalReviewForm(Stage stage) {
         try {
             // Load the FXML file and create a root parent
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MedicalReviewForm.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/MedicalReviewFormDocuments/MedicalReviewForm.fxml"));
             Parent root = loader.load();
 
             // Create a new scene with the root parent
