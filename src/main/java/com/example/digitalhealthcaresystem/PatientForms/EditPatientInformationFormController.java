@@ -126,12 +126,12 @@ public class EditPatientInformationFormController {
                         "Your Contact No is: " + contactNo + "." + "\n" + "\n" +
                         "Are you sure you want to save these saving?");
 
-                ButtonType exitButton = new ButtonType("Yes");
-                ButtonType cancelButton = new ButtonType("No");
+                ButtonType yesButton = new ButtonType("Yes");
+                ButtonType noButton = new ButtonType("No");
 
-                alert.getButtonTypes().setAll(exitButton, cancelButton);
+                alert.getButtonTypes().setAll(yesButton, noButton);
                 alert.showAndWait().ifPresent(buttonType -> {
-                    if (buttonType == exitButton) {
+                    if (buttonType == yesButton) {
                         patient[0] = patientID;
                         patient[1] = name;
                         patient[2] = age;
