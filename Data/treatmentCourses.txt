@@ -1,0 +1,20 @@
+T001,John Doe,35,Male,2021-01-15,2021-01-25,Alpha Variant,Monoclonal antibody infusions,Improved
+T003,Scott JohnSon,33,MtX,2021-02-01,2021-02-28,Omicron Variant,REGEN-COV,worsen
+T004,Lew Williams,35,Male,2020-01-01,2020-01-31,Alpha Variant,REGEN-COV,Improved
+T005,James Brown,60,Male,2021-05-15,2021-05-25,Omicron Variant,Monoclonal antibody infusions,No change
+T006,Patricia Davis,35,Female,2021-06-20,2021-06-30,Alpha Variant,REGEN-COV,Worsen
+T007,Michael Miller,40,Male,2021-07-05,2021-07-15,Beta Variant,Sotrovimab,Improved
+T008,Linda Wilson,50,Female,2021-08-10,2021-08-20,Gamma Variant,Home care and Antiviral medication,No change
+T009,William Moore,65,Male,2021-09-15,2021-09-25,Delta Variant,Monoclonal antibody infusions,Worsen
+T010,Elizabeth Taylor,70,Female,2021-10-20,2021-10-30,Omicron Variant,REGEN-COV,Improved
+T011,David Anderson,75,Male,2021-11-05,2021-11-15,Alpha Variant,Sotrovimab,No change
+T012,Jennifer Thomas,80,Female,2021-12-10,2021-12-20,Beta Variant,Home care and Antiviral medication,Worsen
+T013,Richard Jackson,85,Male,2021-01-25,2021-02-04,Gamma Variant,Monoclonal antibody infusions,Improved
+T014,Susan White,90,Female,2021-02-30,2021-03-12,Delta Variant,REGEN-COV,No change
+T015,Joseph Harris,95,Male,2021-03-15,2021-03-25,Omicron Variant,Sotrovimab,Worsen
+T016,Jessica Martin,100,Female,2021-04-20,2021-04-30,Alpha Variant,Home care and Antiviral medication,Improved
+T017,Thomas Thompson,105,Male,2021-05-05,2021-05-15,Beta Variant,Monoclonal antibody infusions,No change
+T018,Sarah Garcia,110,Female,2021-06-10,2021-06-20,Gamma Variant,REGEN-COV,Worsen
+T019,Lohan Sinux,30,Male,2021-06-10,2021-06-22,Alpha Variant,Home Care and Antiviral Medication,Improved
+T020,Wang Eetian Ethan,40,2021-06-11,2021-06-21,Delta Variant,REGEN-COV,No Change
+T021,Jimmy Butler,21,Male,2021-07-01,2021-07-07,Alpha Variant,Sotrovimab,No changes

@@ -111,34 +111,12 @@ public class CreatePatientHistoryFormController {
             displayErrorMessage();
         }
 
-        // Write the new record to the file
+        // Write the new record to the file and jump to the dashboard
         try (FileWriter writer = new FileWriter(FILE_PATH, true)) {
             writer.write(id + "," + name + "," + age + "," + gender + "," + admissionHistory + "," + pastSymptoms + "," + majorComplaints + "," + observations + "," + treatmentCourse + "\n");
             displaySuccessMessage();
 
             handleGoToDashboardButton(event);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    public void showCreatePatientHistoryForm(Stage stage) {
-        try {
-            // Load the FXML file and create a root parent
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/PatientHistoryFormDocuments/CreatePatientHistory.fxml"));
-            Parent root = loader.load();
-            loader.getController();
-
-            // Create a new scene with the root parent
-            Scene scene = new Scene(root);
-
-            // Set the scene on the primary stage
-            stage.setScene(scene);
-            stage.setTitle("Digital Healthcare System");
-
-            // Show the primary stage
-            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -210,5 +188,26 @@ public class CreatePatientHistoryFormController {
         alert.setHeaderText("Empty Information");
         alert.setContentText("Please fill in all information before saving.");
         alert.show();
+    }
+
+    public void showCreatePatientHistoryForm(Stage stage) {
+        try {
+            // Load the FXML file and create a root parent
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/PatientHistoryFormDocuments/CreatePatientHistory.fxml"));
+            Parent root = loader.load();
+            loader.getController();
+
+            // Create a new scene with the root parent
+            Scene scene = new Scene(root);
+
+            // Set the scene on the primary stage
+            stage.setScene(scene);
+            stage.setTitle("Digital Healthcare System");
+
+            // Show the primary stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

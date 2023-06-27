@@ -1,6 +1,8 @@
-package com.example.digitalhealthcaresystem;
+package com.example.digitalhealthcaresystem.DispensaryForms;
 
 
+import com.example.digitalhealthcaresystem.CalenderFormController;
+import com.example.digitalhealthcaresystem.DashboardController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -80,21 +82,6 @@ public class DispensaryFormController {
     }
 
     @FXML
-    public void handleViewButton() {
-        viewButton.setOnAction(event1 -> System.out.println("viewButton"));
-    }
-
-    @FXML
-    public void handleEditButton() {
-        editButton.setOnAction(event1 -> System.out.println("editButton"));
-    }
-
-    @FXML
-    public void handleGoToHomeButton() {
-        goToHomeButton.setOnAction(event1 -> System.out.println("goToHomeButton"));
-    }
-
-    @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
         DashboardController dashboardController = new DashboardController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -102,15 +89,15 @@ public class DispensaryFormController {
     }
 
     @FXML
-    public void handleGoToCalenderButton() {
-        goToCalenderButton.setOnAction(event1 -> System.out.println("goToCalenderButton"));
+    public void handleGoToCalenderButton(ActionEvent event) {
+        CalenderFormController calenderFormController = new CalenderFormController();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
-    public void handleExitButton() {
-        exitButton.setOnAction(event1 -> {
-            System.exit(1);
-        });
+    public void handleExitButton(ActionEvent event) {
+        System.exit(1);
     }
 
     @FXML

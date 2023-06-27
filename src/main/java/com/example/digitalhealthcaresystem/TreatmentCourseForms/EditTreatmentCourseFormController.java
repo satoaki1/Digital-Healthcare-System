@@ -1,4 +1,4 @@
-package com.example.digitalhealthcaresystem.PatientHistoryForms;
+package com.example.digitalhealthcaresystem.TreatmentCourseForms;
 
 import com.example.digitalhealthcaresystem.CalenderFormController;
 import com.example.digitalhealthcaresystem.DashboardController;
@@ -15,13 +15,8 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditPatientHistoryFormController {
-
-    private static final String FILE_PATH = "Data/patientHistories.txt";
-
-    @FXML
-    private ChoiceBox<String> choiceBox;
-
+public class EditTreatmentCourseFormController {
+    private static final String FILE_PATH = "Data/treatmentCourses.txt";
     @FXML
     private TextField nameField;
 
@@ -32,19 +27,22 @@ public class EditPatientHistoryFormController {
     private TextField genderField;
 
     @FXML
-    private TextField admissionHistoryField;
+    private TextField startDateField;
 
     @FXML
-    private TextField pastSymptomsField;
+    private TextField endDateField;
 
     @FXML
-    private TextField majorComplaintsField;
+    private TextField courseNameField;
 
     @FXML
-    private TextField observationsField;
+    private TextField treatmentPlanField;
 
     @FXML
-    private TextField treatmentCourseField;
+    private TextField progressNotesField;
+
+    @FXML
+    private ChoiceBox<String> choiceBox;
 
     @FXML
     private Button saveButton;
@@ -62,8 +60,8 @@ public class EditPatientHistoryFormController {
     public void handleGoToDashboardButton(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
-        alert.setHeaderText("Unsaved Changes");
-        alert.setContentText("Are you sure you want to exit without saving?");
+        alert.setHeaderText("Exit Confirmation");
+        alert.setContentText("Are you sure you want to exit the app?");
 
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
@@ -101,8 +99,10 @@ public class EditPatientHistoryFormController {
     }
 
     @FXML
-    public void handleExitButton(ActionEvent event) {
-        showExitConfirmation();
+    public void handleExitButton() {
+        exitButton.setOnAction(event1 -> {
+            showExitConfirmation();
+        });
     }
 
     @FXML
@@ -110,40 +110,39 @@ public class EditPatientHistoryFormController {
         updateIDList();
     }
 
-
     public void handleSaveButton(ActionEvent event) {
         DashboardController dashboardController = new DashboardController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        String patientHistoryID = choiceBox.getSelectionModel().getSelectedItem();
+        String treatmentCourseID = choiceBox.getSelectionModel().getSelectedItem();
 
-        List<String[]> patientHistories = readPatientHistoryList(FILE_PATH);
-        for (String[] patientHistory : patientHistories) {
-            if (patientHistory[0].equals(patientHistoryID)) {
+        List<String[]> treatmentCourses = readTreatmentCourseList(FILE_PATH);
+        for (String[] treatmentCourse : treatmentCourses) {
+            if (treatmentCourse[0].equals(treatmentCourseID)) {
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
                 String gender = genderField.getText();
-                String admissionHistory = admissionHistoryField.getText();
-                String pastSymptoms = pastSymptomsField.getText();
-                String majorComplaints = majorComplaintsField.getText();
-                String observations = observationsField.getText();
-                String treatmentCourse = treatmentCourseField.getText();
+                String startDate = startDateField.getText();
+                String endDate = endDateField.getText();
+                String courseName = courseNameField.getText();
+                String treatmentPlan = treatmentPlanField.getText();
+                String progressNotes = progressNotesField.getText();
 
-                if (name == null || age == 0 || gender == null || admissionHistory == null || pastSymptoms == null || majorComplaints == null || observations == null || treatmentCourse == null) {
+                if (name == null || age == 0 || gender == null || startDate == null || endDate == null || courseName == null || treatmentPlan == null || progressNotes == null) {
                     displayErrorMessage();
                 }
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Details Confirmation");
                 alert.setHeaderText("Please check before save.");
-                alert.setContentText("Your History ID is: " + patientHistoryID + "\n" +
+                alert.setContentText("Your Treatment Course ID is: " + treatmentCourseID + "\n" +
                         "Your Name is: " + name + "\n" +
                         "Your Age is: " + age + "\n" +
                         "Your Gender is: " + gender + "\n" +
-                        "Your Admission History is: " + admissionHistory + "\n" +
-                        "Your Past Symptoms is: " + pastSymptoms + "\n" +
-                        "Your Major Complaints is: " + majorComplaints + "\n" +
-                        "Your Observations is: " + observations + "\n" +
-                        "Your Treatment Course is: " + treatmentCourse + "." + "\n" + "\n" +
+                        "Your Start Date is: " + startDate + "\n" +
+                        "Your End Date is: " + endDate + "\n" +
+                        "Your Course Name is: " + courseName + "\n" +
+                        "Your Treatment Plan is: " + treatmentPlan + "\n" +
+                        "Your Progress Notes is: " + progressNotes + "." + "\n" + "\n" +
                         "Are you sure you want to save these saving?");
 
                 ButtonType yesButton = new ButtonType("Yes");
@@ -151,22 +150,22 @@ public class EditPatientHistoryFormController {
                 alert.getButtonTypes().setAll(yesButton, noButton);
                 alert.showAndWait().ifPresent(buttonType -> {
                     if (buttonType == yesButton) {
-                        patientHistory[0] = patientHistoryID;
-                        patientHistory[1] = name;
-                        patientHistory[2] = String.valueOf(age);
-                        patientHistory[3] = gender;
-                        patientHistory[4] = admissionHistory;
-                        patientHistory[5] = pastSymptoms;
-                        patientHistory[6] = majorComplaints;
-                        patientHistory[7] = observations;
-                        patientHistory[8] = treatmentCourse;
+                        treatmentCourse[0] = treatmentCourseID;
+                        treatmentCourse[1] = name;
+                        treatmentCourse[2] = String.valueOf(age);
+                        treatmentCourse[3] = gender;
+                        treatmentCourse[4] = startDate;
+                        treatmentCourse[5] = endDate;
+                        treatmentCourse[6] = courseName;
+                        treatmentCourse[7] = treatmentPlan;
+                        treatmentCourse[8] = progressNotes;
                         displaySuccessMessage();
                     }
                 });
                 break;
             }
         }
-        writePatientHistoryList(patientHistories, FILE_PATH);
+        writeTreatmentCourseList(treatmentCourses, FILE_PATH);
         dashboardController.loadDashboardView(stage);
     }
 
@@ -187,8 +186,8 @@ public class EditPatientHistoryFormController {
         }
     }
 
-    private List<String[]> readPatientHistoryList(String filename) {
-        List<String[]> patientHistoryList = new ArrayList<>();
+    private List<String[]> readTreatmentCourseList(String filename) {
+        List<String[]> treatmentCourseList = new ArrayList<>();
 
         File file = new File(filename);
         if (file.exists()) {
@@ -196,16 +195,16 @@ public class EditPatientHistoryFormController {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     String[] data = line.split(",");
-                    patientHistoryList.add(data);
+                    treatmentCourseList.add(data);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        return patientHistoryList;
+        return treatmentCourseList;
     }
 
-    public void writePatientHistoryList(List<String[]> patients, String fileName) {
+    public void writeTreatmentCourseList(List<String[]> patients, String fileName) {
         FileWriter fileWriter = null;
         try {
             File file = new File(fileName);
@@ -231,11 +230,12 @@ public class EditPatientHistoryFormController {
         }
     }
 
+
     private void showExitConfirmation() {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
-        alert.setHeaderText("Unsaved Changes");
-        alert.setContentText("Are you sure you want to exit without saving?");
+        alert.setHeaderText("Exit Confirmation");
+        alert.setContentText("Are you sure you want to exit the app?");
 
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
@@ -244,7 +244,7 @@ public class EditPatientHistoryFormController {
 
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
-                System.exit(0); // Replace this with your application's exit logic
+                System.exit(1); // Replace this with your application's exit logic
             }
         });
     }
@@ -266,10 +266,10 @@ public class EditPatientHistoryFormController {
     }
 
     @FXML
-    public void showEditPatientHistoryForm(Stage stage) {
+    public void showEditTreatmentCourseForm(Stage stage) {
         try {
             // Load the FXML file and create a root parent
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/PatientHistoryFormDocuments/EditPatientHistory.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/TreatmentCourseFormDocuments/EditTreatmentCourseForm.fxml"));
             Parent root = loader.load();
             loader.getController();
 

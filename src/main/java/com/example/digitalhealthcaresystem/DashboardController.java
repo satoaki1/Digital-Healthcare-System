@@ -1,6 +1,11 @@
 package com.example.digitalhealthcaresystem;
 
+import com.example.digitalhealthcaresystem.DataStorageControllers.DataStorageController;
+import com.example.digitalhealthcaresystem.DispensaryForms.DispensaryFormController;
+import com.example.digitalhealthcaresystem.MedicalReviewForms.MedicalReviewFormController;
 import com.example.digitalhealthcaresystem.PatientForms.ViewPatientInformationFormController;
+import com.example.digitalhealthcaresystem.PatientHistoryForms.PatientHistoryFormController;
+import com.example.digitalhealthcaresystem.TreatmentCourseForms.ViewTreatmentCourseFormController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +21,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class DashboardController {
-    private static final String FILE_PATH = "patients.txt";
+    private static final String FILE_PATH = "Data/patients.txt";
+    private static final String PERSONAL_INFO = "Data/candidates.txt";
 
     @FXML
     private Hyperlink medicalHistoryLink;
@@ -57,9 +63,9 @@ public class DashboardController {
 
     @FXML
     public void handleTreatmentCourseLink(ActionEvent event) {
-        TreatmentCourseFormController treatmentCourseFormController = new TreatmentCourseFormController();
+        ViewTreatmentCourseFormController viewTreatmentCourseFormController = new ViewTreatmentCourseFormController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        treatmentCourseFormController.showTreatmentCourseForm(stage);
+        viewTreatmentCourseFormController.showViewTreatmentCourseForm(stage);
     }
 
     @FXML
@@ -78,9 +84,9 @@ public class DashboardController {
 
     @FXML
     public void handleDataStorageSystemLink(ActionEvent event) {
-        DataStorageFormController dataStorageFormController = new DataStorageFormController();
+        DataStorageController dataStorageController = new DataStorageController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        dataStorageFormController.showDataStorageView(stage);
+        dataStorageController.showDataStorageView(stage);
     }
 
     @FXML
@@ -99,7 +105,7 @@ public class DashboardController {
 
     @FXML
     public void handleExitButton(ActionEvent event) {
-        showExitConfirmation();
+        System.exit(1);
     }
 
     @FXML
@@ -109,9 +115,7 @@ public class DashboardController {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
-                if (!data[1].equals(patientName)) {
-                    continue;
-                } else {
+                if (data[1].equals(patientName)) {
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     try {
@@ -142,24 +146,6 @@ public class DashboardController {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    private void showExitConfirmation() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Exit Confirmation");
-        alert.setHeaderText("Unsaved Changes");
-        alert.setContentText("Are you sure you want to exit without saving?");
-
-        ButtonType exitButton = new ButtonType("Exit");
-        ButtonType cancelButton = new ButtonType("Cancel");
-
-        alert.getButtonTypes().setAll(exitButton, cancelButton);
-
-        alert.showAndWait().ifPresent(buttonType -> {
-            if (buttonType == exitButton) {
-                System.exit(0); // Replace this with your application's exit logic
-            }
-        });
     }
 
     @FXML

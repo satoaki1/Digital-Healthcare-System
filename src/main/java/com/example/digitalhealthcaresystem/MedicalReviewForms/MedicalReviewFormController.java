@@ -1,5 +1,7 @@
-package com.example.digitalhealthcaresystem;
+package com.example.digitalhealthcaresystem.MedicalReviewForms;
 
+import com.example.digitalhealthcaresystem.CalenderFormController;
+import com.example.digitalhealthcaresystem.DashboardController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,8 +14,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MedicalReviewFormController {
-    @FXML
-    private Button goToHomeButton;
 
     @FXML
     private Button goToCalenderButton;
@@ -25,11 +25,6 @@ public class MedicalReviewFormController {
     private Button exitButton;
 
     @FXML
-    public void handleGoToHomeButton() {
-        goToHomeButton.setOnAction(event1 -> System.out.println("goToHomeButton"));
-    }
-
-    @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
         DashboardController dashboardController = new DashboardController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -37,8 +32,10 @@ public class MedicalReviewFormController {
     }
 
     @FXML
-    public void handleGoToCalenderButton() {
-        goToCalenderButton.setOnAction(event1 -> System.out.println("goToCalenderButton"));
+    public void handleGoToCalenderButton(ActionEvent event) {
+        CalenderFormController calenderFormController = new CalenderFormController();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        calenderFormController.showCalenderForm(stage);
     }
 
     @FXML

@@ -5,51 +5,46 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 0 0 0 0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.DispensaryForms.DispensaryFormController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.DataStorageControllers.DataStorageController">
    <children>
       <Pane layoutX="3.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="594.0" style="-fx-background-color: #6633CC;" />
       <Pane layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="558.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 20 20 20 20;">
          <children>
-            <Pane layoutX="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="470.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0 20 20 0;">
+            <Pane layoutX="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="470.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 0 20 20 0;">
                <children>
-                  <Text fill="#6633cc" layoutX="25.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dispensary">
+                  <Text fill="#6633cc" layoutX="25.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Storage System">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="patientReviewButton" layoutX="25.0" layoutY="60.0" mnemonicParsing="false" onAction="#handlePatientReviewButton" prefHeight="36.0" prefWidth="320.0" style="-fx-background-radius: 18 18 18 18; -fx-background-color: #6633CC;" text="Patient Review" textFill="WHITE">
+                  <Button fx:id="patientInformationDataButton" layoutX="25.0" layoutY="60.0" mnemonicParsing="false" onAction="#handlePatientInformationDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Patient Information Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="treatmentCourseButton" layoutX="25.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleTreatmentCourseButton" prefHeight="36.0" prefWidth="320.0" style="-fx-background-radius: 18 18 18 18; -fx-background-color: #6633CC;" text="Treatment Course" textFill="WHITE">
+                  <Button fx:id="patientHistoryDataButton" layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onAction="#handlePatientHistoryDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Patient History Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="requiredMedicationButton" layoutX="25.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleRequiredMedicationButton" prefHeight="36.0" prefWidth="320.0" style="-fx-background-radius: 18 18 18 18; -fx-background-color: #6633CC;" text="Required Medication" textFill="WHITE">
+                  <Button fx:id="treatmentCourseDataButton" layoutX="25.0" layoutY="172.0" mnemonicParsing="false" onAction="#handleTreatmentCourseDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Treatment Course Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="requiredDosageButton" layoutX="25.0" layoutY="198.0" mnemonicParsing="false" onAction="#handleRequiredDosageButton" prefHeight="36.0" prefWidth="320.0" style="-fx-background-radius: 18 18 18 18; -fx-background-color: #6633CC;" text="Required Dosage" textFill="WHITE">
+                  <Button fx:id="medicalReviewDataButton" layoutX="25.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleMedicalReviewDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Medical Review Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="medicationFrequencyButton" layoutX="25.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleMedicationFrequencyButton" prefHeight="36.0" prefWidth="320.0" style="-fx-background-radius: 18 18 18 18; -fx-background-color: #6633CC;" text="Medication Frequency" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="followUpDateButton" layoutX="25.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleFollowUpDateButton" prefHeight="36.0" prefWidth="320.0" style="-fx-background-radius: 18 18 18 18; -fx-background-color: #6633CC;" text="Follow-up Date" textFill="WHITE">
+                  <Button fx:id="dispensaryDataButton" layoutX="25.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleDispensaryDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Dispensary Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="87.0" style="-fx-background-color: #DCDCDC; -fx-background-radius: 20 0 0 20;">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="87.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 0 0 20;">
                <children>
                   <Button fx:id="goToCalenderButton" layoutX="20.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleGoToCalenderButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
                      <font>
@@ -58,7 +53,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/calendar.png" />
+                              <Image url="@../Images/calendar.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -70,7 +65,7 @@
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/dashboard icon.png" />
+                              <Image url="@../Images/dashboard icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -82,14 +77,14 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Images/exit.png" />
+                              <Image url="@../Images/exit.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Images/MedicalMark.png" />
+                        <Image url="@../Images/MedicalMark.png" />
                      </image>
                   </ImageView>
                </children>

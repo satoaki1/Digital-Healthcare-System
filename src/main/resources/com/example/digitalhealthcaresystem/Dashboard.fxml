@@ -19,7 +19,7 @@
                   </Text>
                   <Pane layoutX="17.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="189.0" style="-fx-background-color: #BC8F8F; -fx-background-radius: 10 10 10 10;">
                      <children>
-                        <Text fill="WHITE" layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Dr">
+                        <Text fill="WHITE" layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, Doctor">
                            <font>
                               <Font name="Arial" size="18.0" />
                            </font>
@@ -29,11 +29,6 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Text>
-                        <Label layoutX="119.0" layoutY="8.0" text="Label" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
                      </children>
                   </Pane>
                   <Pane layoutX="17.0" layoutY="114.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="144.0" prefWidth="189.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 10 10 10 10;">
@@ -75,7 +70,11 @@
                         </Button>
                      </children>
                   </Pane>
-                  <DatePicker layoutX="223.0" layoutY="40.0" />
+                  <ImageView fitHeight="303.6" fitWidth="230.0" layoutX="223.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" >
+                        <image>
+                            <Image url="@../../../June-2023-Calendar.jpg" />
+                        </image>
+                  </ImageView>
                </children>
             </Pane>
             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="87.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 7 0 0 7;">

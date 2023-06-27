@@ -1,0 +1,22 @@
+H001,Aaron Peter,21,Male,2021-01-15,Cough and Sore Throat,Difficulty Eating and Body Aches,Alpha Variant,Monoclonal antibody infusions
+H002,Bella Smith,45,Female,2021-02-20,Fever and Fatigue,Difficulty Breathing,Beta Variant,REGEN-COV
+H003,Charles Barkley,34,Male,2021-03-03,asdfpoiu,poiuasdf,poiupoiu,asdfasdf
+H004,Daisy Williams,55,Female,2021-04-10,Shortness of Breath,Persistent Pain,Delta Variant,Home care and Antiviral medication
+H006,Fiona Davis,35,Female,2021-06-20,Fatigue and Fever,Difficulty Sleeping,Alpha Variant,REGEN-COV
+H007,George Miller,40,Male,2021-07-05,Cough and Loss of Appetite,Constant Fatigue,Beta Variant,Sotrovimab
+H008,Hannah Wilson,50,Female,2021-08-10,Fever and Muscle Pain,Loss of Appetite,Gamma Variant,Home care and Antiviral medication
+H009,Isaac Moore,65,Male,2021-09-15,Sore Throat and Headache,Difficulty Concentrating,Delta Variant,Monoclonal antibody infusions
+H010,Julia Taylor,70,Female,2021-10-20,Fatigue and Cough,Persistent Cough,Omicron Variant,REGEN-COV
+H011,Kevin Anderson,75,Male,2021-11-05,Fever and Shortness of Breath,Severe Fatigue,Alpha Variant,Sotrovimab
+H012,Lily Thomas,80,Female,2021-12-10,Cough and Loss of Smell,Difficulty Speaking,Beta Variant,Home care and Antiviral medication
+H013,Mason Jackson,85,Male,2021-01-25,Fatigue and Fever,Persistent Fever,Gamma Variant,Monoclonal antibody infusions
+H014,Nora White,90,Female,2021-02-30,Sore Throat and Diarrhea,Severe Diarrhea,Delta Variant,REGEN-COV
+H015,Oliver Harris,95,Male,2021-03-15,Fever and Cough,Difficulty Swallowing,Omicron Variant,Sotrovimab
+H016,Penelope Martin,100,Female,2021-04-20,Fatigue and Loss of Taste,Constant Thirst,Alpha Variant,Home care and Antiviral medication
+H017,Quentin Thompson,105,Male,2021-05-05,Sore Throat and Fever,Severe Body Aches,Beta Variant,Monoclonal antibody infusions
+H018,Rose Garcia,110,Female,2021-06-10,Fever and Cough,Persistent Cough,Gamma Variant,REGEN-CSure
+H019,Lohan Sinux,30,Male,2021-03-05,Loss of Taste and Smell,Chest Pain,Gamma Variant,Sotrovimab
+H020,Wang Eetian Ethan,40,Male,2021-07-05,Cough and Loss of Appetite,Constant Fatigue,Beta Variant,Sotrovimab
+H021,Jimmy Butler,23,Male,2021-01-01,asdfasdfasdf,lkjhlkjhlkjh,asdflkjh,lkjhasdf
+H022,Nonsense Nonsense,44,Nonsense,2021-01-01,Nonsense,Nonsense,Nonsense,Nonsense
+H023,Nonsense,33,Non-Binary,Nonsense,NonsenseNonsense,NonsenseNonsense,NonsenseNonsense,NonsenseNonsense

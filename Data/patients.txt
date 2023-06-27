@@ -1,13 +1,11 @@
-P001,John Doe,35,O+,170,75,Male,120,Engineer,123 Jalan Merdeka Kuala Lumpur,01112345678
-P002,Jane Smith,42,A-,165,68,Female,130,Teacher,456 Persiaran Raja Chulan Petaling Jaya,01198765432
+P001,John Johnson,34,A+,175,65,Male,105,Engineer,asdflkjhasdflkjh,0123456789
 P003,Michael Johnson,55,B+,175,80,Male,140,Doctor,789 Lorong Sentosa Penang,01124681357
-P004,Emily Davis,28,AB-,160,55,Female,110,Artist,321 Jalan Tun Razak Johor Bahru,01157575757
 P005,Sarah Thompson,39,O+,168,70,Female,125,Lawyer,543 Jalan Bukit Bintang Kuala Lumpur,01188888888
 P006,Robert Wilson,47,A-,180,85,Male,135,Accountant,876 Jalan Ampang Klang,01311111111
 P007,Jennifer Martinez,31,B+,163,62,Female,115,Nurse,234 Jalan Sultan Ismail Georgetown,01322222222
 P008,Amanda Taylor,44,O-,172,73,Female,128,Architect,765 Jalan Pudu Kuala Lumpur,01333333333
 P009,Christopher Brown,33,AB+,175,78,Male,132,Programmer,432 Jalan Ipoh Petaling Jaya,01344444444
-P010,Samantha Anderson,50,O+,166,65,Female,122,Writer,987 Jalan Gurney Penang,01355555555
+P010,Lohan Sinux,18,AB+,187,100,Male,100,Student,asdfasdfasdfasdf,01122334567
 P011,Nicole Thomas,29,B+,160,60,Female,118,Marketing Specialist,159 Jalan Klang Lama Shah Alam,01166666666
 P012,Elizabeth Jackson,49,A-,168,72,Female,130,Psychologist,753 Jalan Raja Muda Abdul Aziz Kuala Lumpur,01177777777
 P013,Joshua White,38,B+,180,85,Male,140,Engineer,258 Jalan Kampung Pandan Johor Bahru,01188888888
@@ -17,4 +15,12 @@ P016,Stephanie Lewis,46,O+,166,68,Female,128,Lawyer,864 Jalan Ampang Hilir Kuala
 P017,Matthew Adams,30,B-,170,72,Male,126,Designer,546 Jalan SS2/75 Petaling Jaya,01130303030
 P018,Lauren Walker,37,AB-,160,65,Female,120,Writer,231 Jalan Bunga Raya Kota Kinabalu,01140404040
 P019,Eric Turner,43,A-,180,80,Male,135,IT Specialist,678 Jalan Tuanku Abdul Rahman Kuala Lumpur,01350505050
-P020,Rebecca Hall,32,B-,165,70,Female,128,Journalist,993 Jalan Duta Kuala Lumpur,01360606060
+P020,Rebecca Hall,32,B-,165,70,Female,128,Journalist,993 Jalan Duta Kuala Lumpur,01360606060P002
+P021,Jimmy Butler,22,A+,100,201,Male,125,Basketball Player,Miami Florida USA,01234567890
+P022,Micheal Jordan,45,AB+,99,198,Male,125,Business Man,Chicago Michigan USA,01111112222
+P023,Draymond Green,31,O+,104,198,Male,130,Basketball Player,Oracle San Francisco U.S.,03344445555
+P024,Stephen Curry,35,B+,86,191,Male,110,Basketball Player,Akron Ohio San Francisco U.S.,0304567878
+P025,Mohamed Fahad Farhan,21,B+,180,70,Male,110,Student,Bandar Sunway Subang Jaya Selangor Malaysia,0345678989
+P026,Aaron Peter,20,O-,170,73,Male,100,Student,Bandar Sunway Subang Jaya Selangor malaysia,01123456789
+P027,Ethan Wang,20,A+,170,60,Male,100,Student,lkjhlkjhkljhlkjh,012344556789
+P028,Noah's Ark,950,B-,400,2,Male,100,Farmer,Methopotamia Irac,01611246950
