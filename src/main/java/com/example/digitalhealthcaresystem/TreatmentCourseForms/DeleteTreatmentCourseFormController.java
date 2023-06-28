@@ -93,9 +93,11 @@ public class DeleteTreatmentCourseFormController {
                     alert.showAndWait().ifPresent(buttonType -> {
                         if (buttonType == yesButton) {
                             treatmentCourses.remove(treatmentCourse);
+                            displaySuccessMessage();
+                        } else {
+                            alert.close();
                         }
                     });
-                    displaySuccessMessage();
                     break;
                 }
             }

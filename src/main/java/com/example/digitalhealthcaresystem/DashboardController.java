@@ -40,6 +40,12 @@ public class DashboardController {
     private Hyperlink dataStorageSystemLink;
 
     @FXML
+    private Button userSupportButton;
+
+    @FXML
+    private Button userGuideButton;
+
+    @FXML
     private Button goToCalenderButton;
 
     @FXML
@@ -146,6 +152,20 @@ public class DashboardController {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void handleUserSupportButton() {
+        userSupportButton.setOnAction(event -> {
+            System.out.println("Coming Soon...");
+        });
+    }
+
+    @FXML
+    public void handleUserGuideButton() {
+        userGuideButton.setOnAction(event -> {
+            System.out.println("Coming Soon...");
+        });
     }
 
     @FXML

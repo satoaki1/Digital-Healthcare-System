@@ -43,12 +43,12 @@
                   </Pane>
                   <Pane layoutX="17.0" layoutY="267.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="189.0" style="-fx-background-color: #6633CC; -fx-background-radius: 10 10 10 10;">
                      <children>
-                        <Button layoutX="8.0" layoutY="7.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Support" textFill="#6633cc">
+                        <Button fx:id="userSupportButton" layoutX="8.0" layoutY="7.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" onAction="#handleUserSupportButton" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Support" textFill="#6633cc">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="8.0" layoutY="41.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Guide" textFill="#6633cc">
+                        <Button fx:id="userGuideButton" layoutX="8.0" layoutY="41.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" onAction="#handleUserGuideButton" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Guide" textFill="#6633cc">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>

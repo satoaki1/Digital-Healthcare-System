@@ -76,6 +76,9 @@ public class DeletePatientInformationFormController {
                     alert.showAndWait().ifPresent(buttonType -> {
                         if (buttonType == yesButton) {
                             patients.remove(patient);
+                            displaySuccessMessage();
+                        } else {
+                            alert.close();
                         }
                     });
                     displaySuccessMessage();

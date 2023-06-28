@@ -93,9 +93,11 @@ public class DeletePatientHistoryFormController {
                     alert.showAndWait().ifPresent(buttonType -> {
                         if (buttonType == yesButton) {
                             patientHistories.remove(patientHistory);
+                            displaySuccessMessage();
+                        } else {
+                            alert.close();
                         }
                     });
-                    displaySuccessMessage();
                     break;
                 }
             }
