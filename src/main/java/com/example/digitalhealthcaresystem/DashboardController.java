@@ -1,7 +1,6 @@
 package com.example.digitalhealthcaresystem;
 
 import com.example.digitalhealthcaresystem.DataStorageControllers.DataStorageController;
-import com.example.digitalhealthcaresystem.DispensaryForms.DispensaryFormController;
 import com.example.digitalhealthcaresystem.MedicalReviewForms.MedicalReviewFormController;
 import com.example.digitalhealthcaresystem.PatientForms.ViewPatientInformationFormController;
 import com.example.digitalhealthcaresystem.PatientHistoryForms.PatientHistoryFormController;
@@ -82,14 +81,7 @@ public class DashboardController {
     }
 
     @FXML
-    public void handleDispensaryLink(ActionEvent event) {
-        DispensaryFormController dispensaryFormController = new DispensaryFormController();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        dispensaryFormController.showDispensaryForm(stage);
-    }
-
-    @FXML
-    public void handleDataStorageSystemLink(ActionEvent event) {
+    public void handleDataStorageLink(ActionEvent event) {
         DataStorageController dataStorageController = new DataStorageController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         dataStorageController.showDataStorageView(stage);

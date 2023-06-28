@@ -179,6 +179,18 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Button fx:id="backButton" layoutX="20.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/back button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                   <Button fx:id="exitButton" layoutX="20.0" layoutY="292.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
                      <font>
                         <Font name="Arial Bold" size="13.0" />

@@ -16,6 +16,4 @@ module com.example.digitalhealthcaresystem {
     opens com.example.digitalhealthcaresystem.DataStorageControllers to javafx.fxml;
     exports com.example.digitalhealthcaresystem.MedicalReviewForms;
     opens com.example.digitalhealthcaresystem.MedicalReviewForms to javafx.fxml;
-    exports com.example.digitalhealthcaresystem.DispensaryForms;
-    opens com.example.digitalhealthcaresystem.DispensaryForms to javafx.fxml;
 }

@@ -2,7 +2,7 @@ package com.example.digitalhealthcaresystem.DataStorageControllers;
 
 import com.example.digitalhealthcaresystem.CalenderFormController;
 import com.example.digitalhealthcaresystem.DashboardController;
-import com.example.digitalhealthcaresystem.DispensaryForms.DispensaryFormController;
+import com.example.digitalhealthcaresystem.MedicalReviewForms.MedicalReviewFormController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,15 +26,6 @@ public class DataStorageController {
 
     @FXML
     private Button medicalReviewDataButton;
-
-    @FXML
-    private Button dispensaryDataButton;
-    
-    @FXML
-    private Button viewButton;
-
-    @FXML
-    private Button editButton;
 
     @FXML
     private Button goToCalenderButton;
@@ -75,16 +66,9 @@ public class DataStorageController {
     @FXML
     public void handleMedicalReviewDataButton() {
         medicalReviewDataButton.setOnAction(event -> {
-            System.out.println("medicalReviewDataButton");
-        });
-    }
-
-    @FXML
-    public void handleDispensaryDataButton() {
-        dispensaryDataButton.setOnAction(event -> {
-            DispensaryFormController dispensaryFormController = new DispensaryFormController();
+            MedicalReviewFormController medicalReviewFormController = new MedicalReviewFormController();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            dispensaryFormController.showDispensaryForm(stage);
+            medicalReviewFormController.showMedicalReviewForm(stage);
         });
     }
 
@@ -113,7 +97,6 @@ public class DataStorageController {
             // Load the FXML file and create a root parent
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/DataStorageDocuments/DataStorage.fxml"));
             Parent root = loader.load();
-
 
             // Create a new scene with the root parent
             Scene scene = new Scene(root);

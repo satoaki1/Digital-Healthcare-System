@@ -91,6 +91,10 @@ public class ViewTreatmentCourseFormController {
         calenderFormController.showCalenderForm(stage);
     }
 
+    public void handleBackButton(ActionEvent event) {
+        
+    }
+
 
     @FXML
     public void handleExitButton() {

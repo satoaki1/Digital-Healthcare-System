@@ -22,22 +22,17 @@
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="patientHistoryDataButton" layoutX="25.0" layoutY="116.0" mnemonicParsing="false" onAction="#handlePatientHistoryDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Patient History Data" textFill="WHITE">
+                  <Button fx:id="patientHistoryDataButton" layoutX="25.0" layoutY="126.0" mnemonicParsing="false" onAction="#handlePatientHistoryDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Patient History Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="treatmentCourseDataButton" layoutX="25.0" layoutY="172.0" mnemonicParsing="false" onAction="#handleTreatmentCourseDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Treatment Course Data" textFill="WHITE">
+                  <Button fx:id="treatmentCourseDataButton" layoutX="25.0" layoutY="192.0" mnemonicParsing="false" onAction="#handleTreatmentCourseDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Treatment Course Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="medicalReviewDataButton" layoutX="25.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleMedicalReviewDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Medical Review Data" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="dispensaryDataButton" layoutX="25.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleDispensaryDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Dispensary Data" textFill="WHITE">
+                  <Button fx:id="medicalReviewDataButton" layoutX="25.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleMedicalReviewDataButton" prefHeight="45.0" prefWidth="320.0" style="-fx-background-radius: 22.5 22.5 22.5 22.5; -fx-background-color: #6633CC;" text="Medical Review Data" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>

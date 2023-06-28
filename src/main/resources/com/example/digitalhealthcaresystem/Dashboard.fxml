@@ -35,20 +35,19 @@
                      <children>
                         <Text layoutX="75.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GO TO" />
                         <Hyperlink fx:id="medicalHistoryLink" layoutX="47.0" layoutY="33.0" onAction="#handlePatientHistoryLink" text="Patient History" textFill="#6633cc" />
-                        <Hyperlink fx:id="treatmentCourseLink" layoutX="39.0" layoutY="53.0" onAction="#handleTreatmentCourseLink" text="Treatment Course" textFill="#6633cc" />
-                        <Hyperlink fx:id="medicalReviewLink" layoutX="46.0" layoutY="73.0" onAction="#handleMedicalReviewLink" text="Medical Review" textFill="#6633cc" />
-                        <Hyperlink fx:id="dispensaryLink" layoutX="58.0" layoutY="93.0" onAction="#handleDispensaryLink" text="Dispensary" textFill="#6633cc" />
-                        <Hyperlink fx:id="dataStorageSystemLink" layoutX="32.0" layoutY="113.0" onAction="#handleDataStorageSystemLink" text="Data Storage System" textFill="#6633cc" />
+                        <Hyperlink fx:id="treatmentCourseLink" layoutX="39.0" layoutY="58.0" onAction="#handleTreatmentCourseLink" text="Treatment Course" textFill="#6633cc" />
+                        <Hyperlink fx:id="medicalReviewLink" layoutX="46.0" layoutY="83.0" onAction="#handleMedicalReviewLink" text="Medical Review" textFill="#6633cc" />
+                        <Hyperlink fx:id="dataStorageSystemLink" layoutX="53.0" layoutY="108.0" onAction="#handleDataStorageLink" text="Data Storage" textFill="#6633cc" />
                      </children>
                   </Pane>
                   <Pane layoutX="17.0" layoutY="267.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="189.0" style="-fx-background-color: #6633CC; -fx-background-radius: 10 10 10 10;">
                      <children>
-                        <Button fx:id="userSupportButton" layoutX="8.0" layoutY="7.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" onAction="#handleUserSupportButton" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Support" textFill="#6633cc">
+                        <Button fx:id="userSupportButton" layoutX="8.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleUserSupportButton" prefHeight="27.0" prefWidth="173.0" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Support" textFill="#6633cc">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="userGuideButton" layoutX="8.0" layoutY="41.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" onAction="#handleUserGuideButton" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Guide" textFill="#6633cc">
+                        <Button fx:id="userGuideButton" layoutX="8.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleUserGuideButton" prefHeight="27.0" prefWidth="173.0" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" text="User Guide" textFill="#6633cc">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
@@ -63,14 +62,14 @@
                            </font>
                         </Text>
                         <TextField fx:id="patientField" layoutX="22.0" layoutY="38.0" prefHeight="27.0" prefWidth="187.0" promptText="Enter Name or ID" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" />
-                        <Button fx:id="submitButton" layoutX="84.82" layoutY="70.0" mnemonicParsing="false" style="-fx-background-color: #6633CC;" text="Search" textFill="WHITE" onAction="#handleSearchButton">
+                        <Button fx:id="submitButton" layoutX="84.82" layoutY="70.0" mnemonicParsing="false" onAction="#handleSearchButton" style="-fx-background-color: #6633CC;" text="Search" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Button>
                      </children>
                   </Pane>
-                  <ImageView fitHeight="303.6" fitWidth="230.0" layoutX="223.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" >
+                  <ImageView fitHeight="303.6" fitWidth="230.0" layoutX="223.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@../../../June-2023-Calendar.jpg" />
                         </image>

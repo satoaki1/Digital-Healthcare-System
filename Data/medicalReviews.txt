@@ -1,0 +1,3 @@
+P016,Stephanie Lewis,Patient has been diagnosed with Cancer. Prognosis is fatal. Will die.
+P003,Michael Johnson,ABCD
+P014,Melissa Harris,Cancer. Going to die.
