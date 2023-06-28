@@ -20,3 +20,5 @@ H020,Wang Yu,40,Male,2021-07-05,Cough and Loss of Appetite,Constant Fatigue,Beta
 H021,Jimmy Butler,23,Male,2021-01-01,asdfasdfasdf,lkjhlkjhlkjh,asdflkjh,lkjhasdf
 H022,Nonsense Nonsense,44,Nonsense,2021-01-01,Nonsense,Nonsense,Nonsense,Nonsense
 H023,Nonsense,33,Non-Binary,Nonsense,NonsenseNonsense,NonsenseNonsense,NonsenseNonsense,NonsenseNonsense
+H005,Luke Kener,24,Male,2021-03-03,asdf,asdf,asdf,asdf
+H024,Luke Kener,24,Male,2021-03-03,asdf,asdf,asdf,asdf

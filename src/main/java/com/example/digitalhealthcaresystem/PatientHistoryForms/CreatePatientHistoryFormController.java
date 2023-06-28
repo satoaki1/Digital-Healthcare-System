@@ -131,8 +131,14 @@ public class CreatePatientHistoryFormController {
             writer.write(id + "," + name + "," + age + "," + gender + "," + admissionHistory + "," + pastSymptoms + "," + majorComplaints + "," + observations + "," + treatmentCourse + "\n");
             displaySuccessMessage();
 
-            // Handle the go-to dashboard action
-            handleGoToDashboardButton(event);
+            // Create an instance of DashboardController
+            DashboardController dashboardController = new DashboardController();
+
+            // Get the current stage from the event source
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Load the dashboard view using the controller
+            dashboardController.loadDashboardView(stage);
         } catch (IOException e) {
             e.printStackTrace();
         }
