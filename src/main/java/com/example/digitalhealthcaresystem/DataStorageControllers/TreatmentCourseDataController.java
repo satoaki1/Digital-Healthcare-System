@@ -40,31 +40,42 @@ public class TreatmentCourseDataController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 
     @FXML
     public void openAddNewPage(ActionEvent event) {
+        // Instantiate the CreateTreatmentCourseFormController
         CreateTreatmentCourseFormController createTreatmentCourseFormController = new CreateTreatmentCourseFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCreateTreatmentCourseForm method to display the create treatment course form
         createTreatmentCourseFormController.showCreateTreatmentCourseForm(stage);
     }
 
     public void initialize() {
+        // Initialize the controller
         updateTreatmentCoursePatientList();
 
         listView.setOnMouseClicked(mouseEvent -> {
@@ -93,6 +104,7 @@ public class TreatmentCourseDataController {
 
                             // Get the controller
                             ViewTreatmentCourseFormController viewTreatmentCourseFormController = loader.getController();
+                            // Call the searchPatient method to display the patient's treatment course
                             viewTreatmentCourseFormController.searchPatient(patientName);
                             break;
                         } catch (IOException e) {
@@ -106,7 +118,8 @@ public class TreatmentCourseDataController {
         });
     }
 
-    // Updating the patient list by clearing the current items in listview then opens patients.txt, reads each line, and adds each line as a new item in the listView.
+    // Updating the patient list by clearing the current items in the list view
+    // then opening treatmentCourses.txt, reading each line, and adding each line as a new item in the listView.
     private void updateTreatmentCoursePatientList() {
         listView.getItems().clear();
 

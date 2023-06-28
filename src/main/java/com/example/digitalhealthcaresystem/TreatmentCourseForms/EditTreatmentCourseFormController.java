@@ -58,18 +58,21 @@ public class EditTreatmentCourseFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Display unsaved changes confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
-        alert.setHeaderText("Exit Confirmation");
-        alert.setContentText("Are you sure you want to exit the app?");
+        alert.setHeaderText("Unsaved Changes");
+        alert.setContentText("Are you sure you want to exit without saving?");
 
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
+                // Create an instance of DashboardController and load the dashboard view
                 DashboardController dashboardController = new DashboardController();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 dashboardController.loadDashboardView(stage);
@@ -79,6 +82,7 @@ public class EditTreatmentCourseFormController {
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Display exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Exit Confirmation");
@@ -89,8 +93,10 @@ public class EditTreatmentCourseFormController {
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
+                // Create an instance of CalenderFormController and show the calendar form
                 CalenderFormController calenderFormController = new CalenderFormController();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 calenderFormController.showCalenderForm(stage);
@@ -99,25 +105,34 @@ public class EditTreatmentCourseFormController {
     }
 
     @FXML
-    public void handleExitButton() {
-        exitButton.setOnAction(event1 -> {
-            showExitConfirmation();
-        });
+    public void handleExitButton(ActionEvent event) {
+        // Show exit confirmation dialog
+        showExitConfirmation();
     }
 
     @FXML
     public void initialize() {
+        // Update the ID choice box
         updateIDList();
     }
 
     public void handleSaveButton(ActionEvent event) {
+        // Create an instance of DashboardController
         DashboardController dashboardController = new DashboardController();
+
+        // Get the current stage from the event
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Get the selected treatment course ID from the choice box
         String treatmentCourseID = choiceBox.getSelectionModel().getSelectedItem();
 
+        // Read the treatment course list from the file
         List<String[]> treatmentCourses = readTreatmentCourseList(FILE_PATH);
+
+        // Iterate over the treatment courses to find the matching ID
         for (String[] treatmentCourse : treatmentCourses) {
             if (treatmentCourse[0].equals(treatmentCourseID)) {
+                // Retrieve the input field values
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
                 String gender = genderField.getText();
@@ -127,10 +142,12 @@ public class EditTreatmentCourseFormController {
                 String treatmentPlan = treatmentPlanField.getText();
                 String progressNotes = progressNotesField.getText();
 
+                // Check if any required fields are null or age is 0
                 if (name == null || age == 0 || gender == null || startDate == null || endDate == null || courseName == null || treatmentPlan == null || progressNotes == null) {
                     displayErrorMessage();
                 }
 
+                // Create a confirmation alert for saving the details
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Details Confirmation");
                 alert.setHeaderText("Please check before save.");
@@ -143,13 +160,16 @@ public class EditTreatmentCourseFormController {
                         "Your Course Name is: " + courseName + "\n" +
                         "Your Treatment Plan is: " + treatmentPlan + "\n" +
                         "Your Progress Notes is: " + progressNotes + "." + "\n" + "\n" +
-                        "Are you sure you want to save these saving?");
+                        "Are you sure you want to save these details?");
 
                 ButtonType yesButton = new ButtonType("Yes");
                 ButtonType noButton = new ButtonType("No");
                 alert.getButtonTypes().setAll(yesButton, noButton);
+
+                // Show the alert and handle the button response
                 alert.showAndWait().ifPresent(buttonType -> {
                     if (buttonType == yesButton) {
+                        // Update the treatment course with the new details and display a success message
                         treatmentCourse[0] = treatmentCourseID;
                         treatmentCourse[1] = name;
                         treatmentCourse[2] = String.valueOf(age);
@@ -165,13 +185,19 @@ public class EditTreatmentCourseFormController {
                 break;
             }
         }
+
+        // Write the updated treatment course list to the file
         writeTreatmentCourseList(treatmentCourses, FILE_PATH);
+
+        // Load the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     private void updateIDList() {
+        // Clear the choice box
         choiceBox.getItems().clear();
 
+        // Read the treatment course data from the file and update the choice box
         File file = new File(FILE_PATH);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -187,6 +213,7 @@ public class EditTreatmentCourseFormController {
     }
 
     private List<String[]> readTreatmentCourseList(String filename) {
+        // Read the treatment course data from the file and return a list of treatment courses
         List<String[]> treatmentCourseList = new ArrayList<>();
 
         File file = new File(filename);
@@ -205,51 +232,55 @@ public class EditTreatmentCourseFormController {
     }
 
     public void writeTreatmentCourseList(List<String[]> patients, String fileName) {
+        // Write the treatment course list to the file
         FileWriter fileWriter = null;
         try {
             File file = new File(fileName);
             fileWriter = new FileWriter(file);
 
-            // process content line by line
+            // Process content line by line
             for (String[] patient : patients) {
                 fileWriter.append(String.join(",", patient));
                 fileWriter.append("\n");
             }
         } catch (Exception e) {
-
-            // handle exception
+            // Handle exception
             e.printStackTrace();
         } finally {
             try {
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException e) {
-                // handle exception
+                // Handle exception
                 e.printStackTrace();
             }
         }
     }
 
 
+
     private void showExitConfirmation() {
+        // Create an exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
-        alert.setHeaderText("Exit Confirmation");
-        alert.setContentText("Are you sure you want to exit the app?");
+        alert.setHeaderText("Unsaved Changes");
+        alert.setContentText("Are you sure you want to exit without saving?");
 
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Show the alert and handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
-                System.exit(1); // Replace this with your application's exit logic
+                System.exit(0); // Replace this with your application's exit logic
             }
         });
     }
 
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Saved");
@@ -257,7 +288,9 @@ public class EditTreatmentCourseFormController {
         alert.show();
     }
 
+
     private void displayErrorMessage() {
+        // Display an error message dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Empty Information");

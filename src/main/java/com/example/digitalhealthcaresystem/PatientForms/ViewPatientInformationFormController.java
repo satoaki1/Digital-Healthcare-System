@@ -75,20 +75,27 @@ public class ViewPatientInformationFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 
@@ -137,31 +144,52 @@ public class ViewPatientInformationFormController {
 
     @FXML
     public void handleListLink(ActionEvent event) {
+        // Create an instance of PatientInformationDataController
         PatientInformationDataController patientInformationDataController = new PatientInformationDataController();
+
+        // Get the current stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Show the patient information data form using the controller
         patientInformationDataController.showPatientInformationDataForm(stage);
     }
 
     @FXML
     public void handleEditLink(ActionEvent event) {
+        // Create an instance of EditPatientInformationFormController
         EditPatientInformationFormController editPatientInformationFormController = new EditPatientInformationFormController();
+
+        // Get the current stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Show the edit patient information form using the controller
         editPatientInformationFormController.showEditPatientInformationForm(stage);
     }
 
     @FXML
     public void handleDeleteLink(ActionEvent event) {
+        // Create an instance of DeletePatientInformationFormController
         DeletePatientInformationFormController deletePatientInformationFormController = new DeletePatientInformationFormController();
+
+        // Get the current stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Show the delete patient information form using the controller
         deletePatientInformationFormController.showDeletePatientInformationForm(stage);
     }
 
     @FXML
     public void handleCreateLink(ActionEvent event) {
+        // Create an instance of CreatePatientInformationFormController
         CreatePatientInformationFormController controller = new CreatePatientInformationFormController();
+
+        // Get the current stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Show the create patient information form using the controller
         controller.showCreatePatientInformationForm(stage);
     }
+
 
     @FXML
     public void showPatientInformationForm(Stage stage) {

@@ -33,20 +33,27 @@ public class CalenderFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 

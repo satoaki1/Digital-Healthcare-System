@@ -40,28 +40,38 @@ public class PatientHistoryFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 
     public void initialize() {
+        // Update the patient history list in the ListView
         updatePatientHistoryList();
 
+        // Handle mouse click event on the ListView items
         listView.setOnMouseClicked(mouseEvent -> {
             try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+                // Get the selected patient record from the ListView
                 String patientRecords = listView.getSelectionModel().getSelectedItem();
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -70,11 +80,11 @@ public class PatientHistoryFormController {
                         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
 
                         try {
-                            // Correctly point to the FXML file
+                            // Load the FXML file for patient history details view
                             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/digitalhealthcaresystem/PatientHistoryFormDocuments/PatientHistoryDetails.fxml"));
                             Parent root = loader.load();
 
-                            // Create a new scene with the root parent
+                            // Create a new scene with the loaded root parent
                             Scene scene = new Scene(root);
 
                             // Set the scene on the primary stage
@@ -84,8 +94,10 @@ public class PatientHistoryFormController {
                             // Show the primary stage
                             stage.show();
 
-                            // Get the controller
+                            // Get the controller for the patient history details view
                             ViewPatientHistoryFormController viewPatientHistoryFormController = loader.getController();
+
+                            // Search and display the selected patient history
                             viewPatientHistoryFormController.searchPatientHistory(patientRecords);
                             break;
                         } catch (IOException e) {
@@ -99,7 +111,8 @@ public class PatientHistoryFormController {
         });
     }
 
-    // Updating the patient History list by clearing the current items in listview then opens patients.txt, reads each line, and adds each line as a new item in the listView.
+    // Updating the patient history list by clearing the current items in the ListView,
+    // then opening patients.txt, reading each line, and adding each line as a new item in the ListView.
     private void updatePatientHistoryList() {
         listView.getItems().clear();
 
@@ -119,10 +132,12 @@ public class PatientHistoryFormController {
 
     @FXML
     public void openAddNewPage(ActionEvent event) {
+        // Create an instance of CreatePatientHistoryFormController and show the create patient history form
         CreatePatientHistoryFormController createPatientHistoryFormController = new CreatePatientHistoryFormController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         createPatientHistoryFormController.showCreatePatientHistoryForm(stage);
     }
+
 
     @FXML
     public void showPatientHistoryForm(Stage stage) {

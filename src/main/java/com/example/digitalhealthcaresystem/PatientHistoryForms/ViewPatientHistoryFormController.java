@@ -58,25 +58,33 @@ public class ViewPatientHistoryFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 
     @FXML
     public void handleListButton(ActionEvent event) {
+        // Create an instance of PatientHistoryFormController and show the patient history form
         PatientHistoryFormController patientHistoryFormController = new PatientHistoryFormController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         patientHistoryFormController.showPatientHistoryForm(stage);
@@ -84,6 +92,7 @@ public class ViewPatientHistoryFormController {
 
     @FXML
     public void handleAddNewButton(ActionEvent event) {
+        // Create an instance of CreatePatientHistoryFormController and show the create patient history form
         CreatePatientHistoryFormController createPatientHistoryFormController = new CreatePatientHistoryFormController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         createPatientHistoryFormController.showCreatePatientHistoryForm(stage);
@@ -91,6 +100,7 @@ public class ViewPatientHistoryFormController {
 
     @FXML
     public void handleEditButton(ActionEvent event) {
+        // Create an instance of EditPatientHistoryFormController and show the edit patient history form
         EditPatientHistoryFormController editPatientHistoryFormController = new EditPatientHistoryFormController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         editPatientHistoryFormController.showEditPatientHistoryForm(stage);
@@ -98,6 +108,7 @@ public class ViewPatientHistoryFormController {
 
     @FXML
     public void handleDeleteButton(ActionEvent event) {
+        // Create an instance of DeletePatientHistoryFormController and show the delete patient history form
         DeletePatientHistoryFormController deletePatientHistoryFormController = new DeletePatientHistoryFormController();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         deletePatientHistoryFormController.showDeletePatientHistory(stage);
@@ -109,12 +120,14 @@ public class ViewPatientHistoryFormController {
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 if ((data[1] + " - " + data[4]).equals(patientRecords)) {
+                    // Set wrap text property to allow text wrapping
                     admissionHistoryLabel.setWrapText(true);
                     pastSymptomsLabel.setWrapText(true);
                     majorComplaintsLabel.setWrapText(true);
                     observationsLabel.setWrapText(true);
                     treatmentCourseLabel.setWrapText(true);
 
+                    // Retrieve and display patient history details
                     String id = data[0];
                     String name = data[1];
                     int age = Integer.parseInt(data[2]);
@@ -142,6 +155,7 @@ public class ViewPatientHistoryFormController {
             e.printStackTrace();
         }
     }
+
 
     public void showPatientHistoryForm(Stage stage) {
         try {

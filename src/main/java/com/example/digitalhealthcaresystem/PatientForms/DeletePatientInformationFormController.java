@@ -35,13 +35,17 @@ public class DeletePatientInformationFormController {
     private Button exitButton;
 
     public void initialize() {
+        // Read patient list from the file and update the UI
         List<String[]> patients = readPatientList(FILE_PATH);
         updatePatientList();
 
+        // Handle mouse click event on the list view
         listView.setOnMouseClicked(mouseEvent -> {
+            // Retrieve the selected patient's information
             String patientName = listView.getSelectionModel().getSelectedItem();
             for (String[] patient : patients) {
                 if (patient[1].equals(patientName)) {
+                    // Extract individual information from the patient array
                     String patientID = patient[0];
                     String age = patient[2];
                     String bloodType = patient[3];
@@ -53,9 +57,10 @@ public class DeletePatientInformationFormController {
                     String address = patient[9];
                     String contactNo = patient[10];
 
+                    // Display a confirmation dialog for deletion
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Deletion Confirmation");
-                    alert.setHeaderText("Please check before delete.");
+                    alert.setHeaderText("Please check before deleting.");
                     alert.setContentText("Your ID is: " + patientID + "\n" +
                             "Your Name is: " + patientName + "\n" +
                             "Your Age is: " + age + "\n" +
@@ -67,12 +72,14 @@ public class DeletePatientInformationFormController {
                             "Your Occupation is: " + occupation + "\n" +
                             "Your Address is: " + address + "\n" +
                             "Your Contact No is: " + contactNo + "." + "\n" + "\n" +
-                            "Are you sure you want to delete these information?");
+                            "Are you sure you want to delete this information?");
 
                     ButtonType yesButton = new ButtonType("Yes");
                     ButtonType noButton = new ButtonType("No");
 
                     alert.getButtonTypes().setAll(yesButton, noButton);
+
+                    // Handle the button actions
                     alert.showAndWait().ifPresent(buttonType -> {
                         if (buttonType == yesButton) {
                             patients.remove(patient);
@@ -89,31 +96,38 @@ public class DeletePatientInformationFormController {
         });
     }
 
+
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
-
     @FXML
-    public void handleExitButton() {
-        exitButton.setOnAction(event1 -> {
-            System.exit(1);
-        });
+    public void handleExitButton(ActionEvent event) {
+        // Exit the application
+        System.exit(1);
     }
 
     private void updatePatientList() {
+        // Clear the list view
         listView.getItems().clear();
 
+        // Read patient list from the file and add names to the list view
         File file = new File(FILE_PATH);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -128,35 +142,37 @@ public class DeletePatientInformationFormController {
         }
     }
 
+
     public void writePatientList(List<String[]> patients, String fileName) {
         FileWriter fileWriter = null;
         try {
+            // Create a file writer for the specified file
             File file = new File(fileName);
             fileWriter = new FileWriter(file);
 
-            // process content line by line
+            // Write each patient's information to the file
             for (String[] patient : patients) {
                 fileWriter.append(String.join(",", patient));
                 fileWriter.append("\n");
             }
         } catch (Exception e) {
-
-            // handle exception
             e.printStackTrace();
         } finally {
+            // Close the file writer
             try {
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException e) {
-                // handle exception
                 e.printStackTrace();
             }
         }
     }
 
+
     private List<String[]> readPatientList(String filename) {
         List<String[]> patientList = new ArrayList<>();
 
+        // Read patient information from the file and add to the patient list
         File file = new File(filename);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -171,6 +187,7 @@ public class DeletePatientInformationFormController {
         }
         return patientList;
     }
+
 
     @FXML
     public void showDeletePatientInformationForm(Stage stage) {
@@ -195,6 +212,7 @@ public class DeletePatientInformationFormController {
     }
 
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Successfully Deleted");

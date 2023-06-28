@@ -66,25 +66,33 @@ public class CreatePatientInformationFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
-        showExitConfirmation();
+        // Exit the application
+        System.exit(1);
     }
 
     @FXML
     public void handleSubmitLink(ActionEvent event) {
+        // Retrieve the input values from the form fields
         String id = findExistingID();
         String name = nameField.getText();
         int age = Integer.parseInt(ageField.getText());
@@ -97,10 +105,12 @@ public class CreatePatientInformationFormController {
         String address = addressField.getText();
         String contactNo = contactNoField.getText();
 
+        // Validate if any field is empty
         if (name == null || age == 0 || bloodType == null || height == 0 || weight == 0 || gender == null || bloodPressure == 0 || occupation == null || address == null || contactNo == null) {
             displayErrorMessage();
         }
 
+        // Create a new record with the input values
         String newRecord = String.format("%s,%s,%d,%s,%d,%d,%s,%d,%s,%s,%s",
                 id, name, age, bloodType, height, weight, gender, bloodPressure, occupation, address, contactNo);
 
@@ -114,6 +124,7 @@ public class CreatePatientInformationFormController {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     public void showCreatePatientInformationForm(Stage stage) {
@@ -138,16 +149,18 @@ public class CreatePatientInformationFormController {
     }
 
     private void showExitConfirmation() {
+        // Display an exit confirmation dialog
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Unsaved Changes");
         alert.setContentText("Are you sure you want to exit without saving?");
 
+        // Add exit and cancel buttons to the dialog
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
-
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Handle the button actions
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
                 System.exit(0); // Replace this with your application's exit logic
@@ -155,8 +168,9 @@ public class CreatePatientInformationFormController {
         });
     }
 
-    public static String findExistingID() {
 
+    public static String findExistingID() {
+        // Initialize a set to store existing IDs
         Set<String> existingIDs = new HashSet<>();
 
         // Read the existing IDs from the text file
@@ -175,6 +189,7 @@ public class CreatePatientInformationFormController {
         return newID;
     }
 
+
     public static String generateUniqueID(Set<String> existingIDs) {
         String prefix = "P";
         int count = 1;
@@ -190,6 +205,7 @@ public class CreatePatientInformationFormController {
     }
 
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Saved");
@@ -197,11 +213,14 @@ public class CreatePatientInformationFormController {
         alert.show();
     }
 
+
     private void displayErrorMessage() {
+        // Display an error message dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Empty Information");
         alert.setContentText("Please fill in all information before saving.");
         alert.show();
     }
+
 }

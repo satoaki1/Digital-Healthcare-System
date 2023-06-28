@@ -71,36 +71,46 @@ public class MedicalReviewFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
-    public void handleExitButton() {
-        exitButton.setOnAction(event1 -> {
-            System.exit(1);
-        });
+    public void handleExitButton(ActionEvent event) {
+        // Exit the application
+        System.exit(1);
     }
 
     @FXML
     public void initialize() {
+        // Initialize the controller
         updateIDList();
     }
 
+
     public void handleSaveButton(ActionEvent event) {
+        // Get the selected patient ID from the choice box
         String patientId = choiceBox.getSelectionModel().getSelectedItem();
+        // Read the patient list and medical reviews from their respective files
         List<String[]> patients = readPatientList(PATIENTS_TXT);
         List<String[]> patientsMedicalReviews = readPatientList(MEDICAL_REVIEWS);
         boolean patientExists = false;
 
+        // Check if the selected patient ID exists in the patient list
         for (String[] patient : patients) {
             if (patient[0].equals(patientId)) {
                 patientExists = true;
@@ -109,9 +119,11 @@ public class MedicalReviewFormController {
         }
 
         if (patientExists) {
+            // Check if a medical review already exists for the patient
             boolean reviewExists = reviewExists(patientsMedicalReviews, patientId);
 
             if (reviewExists) {
+                // Update the existing medical review with new diagnosis information
                 for (String[] review : patientsMedicalReviews) {
                     if (review[0].equals(patientId)) {
                         review[1] = getPatientName(patientId);
@@ -119,8 +131,10 @@ public class MedicalReviewFormController {
                         break;
                     }
                 }
+                // Write the updated medical review list to the file
                 writePatientList(patientsMedicalReviews, MEDICAL_REVIEWS);
             } else {
+                // Create a new medical review for the patient
                 String name = getPatientName(patientId);
                 String newDiagnosis = newDiagnosisArea.getText();
                 try (FileWriter writer = new FileWriter(MEDICAL_REVIEWS, true)) {
@@ -130,6 +144,7 @@ public class MedicalReviewFormController {
                 }
             }
         } else {
+            // Show an error message if the selected patient ID does not exist
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Patient does not exist");
@@ -138,11 +153,15 @@ public class MedicalReviewFormController {
         }
     }
 
+
     public void handleSearchButton(ActionEvent event) {
+        // Call the searchMedicalReview method to search for a medical review
         searchMedicalReview();
     }
 
+
     public String getPatientName(String patientId) {
+        // Retrieve the patient name associated with the given patient ID
         String patientName = "";
         List<String[]> patientList = readPatientList(PATIENTS_TXT);
         for (String[] patient : patientList) {
@@ -154,7 +173,9 @@ public class MedicalReviewFormController {
         return patientName;
     }
 
+
     public boolean reviewExists(List<String[]> patientsMedicalReviews, String patientId) {
+        // Check if a medical review exists for the given patient ID
         boolean reviewExists = false;
         for (String[] review : patientsMedicalReviews) {
             if (review[0].equals(patientId)) {
@@ -165,35 +186,38 @@ public class MedicalReviewFormController {
         return reviewExists;
     }
 
+
     public void writePatientList(List<String[]> patients, String fileName) {
         FileWriter fileWriter = null;
         try {
             File file = new File(fileName);
             fileWriter = new FileWriter(file);
 
-            // process content line by line
+            // Write each patient's information to the file
             for (String[] patient : patients) {
                 fileWriter.append(String.join(",", patient));
                 fileWriter.append("\n");
             }
         } catch (Exception e) {
-
-            // handle exception
+            // Handle exception
             e.printStackTrace();
         } finally {
             try {
+                // Flush and close the file writer
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException e) {
-                // handle exception
+                // Handle exception
                 e.printStackTrace();
             }
         }
     }
 
+
     private List<String[]> readPatientList(String filename) {
         List<String[]> patientList = new ArrayList<>();
 
+        // Read the patient list from the file
         File file = new File(filename);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -209,9 +233,12 @@ public class MedicalReviewFormController {
         return patientList;
     }
 
+
     private void updateIDList() {
+        // Clear the choice box items
         choiceBox.getItems().clear();
 
+        // Update the choice box items with patient IDs from the file
         File file = new File(PATIENTS_TXT);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -227,6 +254,7 @@ public class MedicalReviewFormController {
     }
 
     public void searchMedicalReview() {
+        // Read the medical reviews list
         List<String[]> patientsMedicalReviews = readPatientList(MEDICAL_REVIEWS);
         try (BufferedReader reader = new BufferedReader(new FileReader(PATIENTS_TXT))) {
             String line;
@@ -234,6 +262,7 @@ public class MedicalReviewFormController {
                 String[] data = line.split(",");
                 String patientInfo = patientInfoField.getText();
                 if (data[0].equals(patientInfo)) {
+                    // Retrieve the patient information
                     String id = data[0];
                     String name = data[1];
                     int age = Integer.parseInt(data[2]);
@@ -244,6 +273,7 @@ public class MedicalReviewFormController {
                     int bloodPressure = Integer.parseInt(data[7]);
                     String occupation = data[8];
 
+                    // Update the labels with patient information
                     idLabel.setText(id);
                     nameLabel.setText(name);
                     ageLabel.setText(Integer.toString(age));
@@ -254,6 +284,7 @@ public class MedicalReviewFormController {
                     bloodPressureLabel.setText(Integer.toString(bloodPressure));
                     occupationLabel.setText(occupation);
 
+                    // Check if a medical review exists for the patient and update the diagnosis label
                     boolean reviewExists = reviewExists(patientsMedicalReviews, patientInfo);
                     if (reviewExists) {
                         for (String[] review : patientsMedicalReviews) {
@@ -273,6 +304,7 @@ public class MedicalReviewFormController {
             e.printStackTrace();
         }
     }
+
 
 
     @FXML

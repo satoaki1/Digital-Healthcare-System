@@ -65,15 +65,21 @@ public class EditPatientInformationFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
@@ -84,6 +90,7 @@ public class EditPatientInformationFormController {
 
     @FXML
     public void initialize() {
+        // Initialize the controller
         updateIDList();
     }
     @FXML
@@ -155,8 +162,10 @@ public class EditPatientInformationFormController {
     }
 
     private void updateIDList() {
+        // Clear the choice box items
         choiceBox.getItems().clear();
 
+        // Update the choice box items with patient IDs from the file
         File file = new File(FILE_PATH);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -171,9 +180,11 @@ public class EditPatientInformationFormController {
         }
     }
 
+
     private List<String[]> readPatientList(String filename) {
         List<String[]> patientList = new ArrayList<>();
 
+        // Read the patient list from the file
         File file = new File(filename);
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -212,22 +223,28 @@ public class EditPatientInformationFormController {
     }
 
     private void showExitConfirmation() {
+        // Create a confirmation dialog
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Unsaved Changes");
         alert.setContentText("Are you sure you want to exit without saving?");
 
+        // Create exit and cancel buttons
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
 
+        // Set the buttons for the dialog
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Show the dialog and handle the button actions
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
-                System.exit(0); // Replace this with your application's exit logic
+                // Replace this with your application's exit logic
+                System.exit(0);
             }
         });
     }
+
 
     public void writePatientList(List<String[]> patients, String fileName) {
         FileWriter fileWriter = null;
@@ -235,26 +252,28 @@ public class EditPatientInformationFormController {
             File file = new File(fileName);
             fileWriter = new FileWriter(file);
 
-            // process content line by line
+            // Write each patient's information to the file
             for (String[] patient : patients) {
                 fileWriter.append(String.join(",", patient));
                 fileWriter.append("\n");
             }
         } catch (Exception e) {
-
-            // handle exception
+            // Handle exception
             e.printStackTrace();
         } finally {
             try {
+                // Flush and close the file writer
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException e) {
-                // handle exception
+                // Handle exception
                 e.printStackTrace();
             }
         }
     }
+
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Saved");
@@ -262,7 +281,9 @@ public class EditPatientInformationFormController {
         alert.show();
     }
 
+
     private void displayErrorMessage() {
+        // Display an error message dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Empty Information");

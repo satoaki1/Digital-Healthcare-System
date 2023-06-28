@@ -64,6 +64,7 @@ public class CreatePatientHistoryFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Create an exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Unsaved Changes");
@@ -74,10 +75,16 @@ public class CreatePatientHistoryFormController {
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Show the alert and handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
+                // Create an instance of DashboardController
                 DashboardController dashboardController = new DashboardController();
+
+                // Get the current stage from the event source
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                // Load the dashboard view using the controller
                 dashboardController.loadDashboardView(stage);
             }
         });
@@ -85,18 +92,25 @@ public class CreatePatientHistoryFormController {
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Create an instance of CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+
+        // Get the current stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Show the calendar form using the controller
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Show the exit confirmation alert
         showExitConfirmation();
     }
 
     @FXML
     public void handleSubmitButton(ActionEvent event) {
+        // Get the input values from the form fields
         String id = findExistingID();
         String name = nameField.getText();
         int age = Integer.parseInt(ageField.getText());
@@ -107,6 +121,7 @@ public class CreatePatientHistoryFormController {
         String observations = observationsField.getText();
         String treatmentCourse = treatmentCourseField.getText();
 
+        // Validate the input values
         if (name == null || age == 0 || gender == null || admissionHistory == null || pastSymptoms == null || majorComplaints == null || observations == null || treatmentCourse == null) {
             displayErrorMessage();
         }
@@ -116,6 +131,7 @@ public class CreatePatientHistoryFormController {
             writer.write(id + "," + name + "," + age + "," + gender + "," + admissionHistory + "," + pastSymptoms + "," + majorComplaints + "," + observations + "," + treatmentCourse + "\n");
             displaySuccessMessage();
 
+            // Handle the go-to dashboard action
             handleGoToDashboardButton(event);
         } catch (IOException e) {
             e.printStackTrace();
@@ -123,6 +139,7 @@ public class CreatePatientHistoryFormController {
     }
 
     private void showExitConfirmation() {
+        // Create an exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Unsaved Changes");
@@ -133,12 +150,14 @@ public class CreatePatientHistoryFormController {
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Show the alert and handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
                 System.exit(0); // Replace this with your application's exit logic
             }
         });
     }
+
 
     public static String findExistingID() {
 
@@ -175,6 +194,7 @@ public class CreatePatientHistoryFormController {
     }
 
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Saved");
@@ -182,7 +202,9 @@ public class CreatePatientHistoryFormController {
         alert.show();
     }
 
+
     private void displayErrorMessage() {
+        // Display an error message dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Empty Information");

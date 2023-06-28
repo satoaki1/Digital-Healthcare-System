@@ -63,6 +63,7 @@ public class CreateTreatmentCourseFormController {
     @FXML
     public void handleGoToDashboardButton() {
         goToDashboardButton.setOnAction(event -> {
+            // Create an exit confirmation alert
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Exit Confirmation");
             alert.setHeaderText("Exit Confirmation");
@@ -73,8 +74,10 @@ public class CreateTreatmentCourseFormController {
 
             alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+            // Show the alert and handle the button response
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == exitButton) {
+                    // Create an instance of DashboardController and load the dashboard view
                     DashboardController dashboardController = new DashboardController();
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     dashboardController.loadDashboardView(stage);
@@ -86,6 +89,7 @@ public class CreateTreatmentCourseFormController {
     @FXML
     public void handleGoToCalenderButton() {
         goToCalenderButton.setOnAction(event -> {
+            // Create an exit confirmation alert
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Exit Confirmation");
             alert.setHeaderText("Exit Confirmation");
@@ -96,8 +100,10 @@ public class CreateTreatmentCourseFormController {
 
             alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+            // Show the alert and handle the button response
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == exitButton) {
+                    // Create an instance of CalenderFormController and show the calendar form
                     CalenderFormController calenderFormController = new CalenderFormController();
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     calenderFormController.showCalenderForm(stage);
@@ -109,6 +115,7 @@ public class CreateTreatmentCourseFormController {
     @FXML
     public void handleExitButton() {
         exitButton.setOnAction(event1 -> {
+            // Show exit confirmation
             showExitConfirmation();
         });
     }
@@ -116,6 +123,7 @@ public class CreateTreatmentCourseFormController {
     @FXML
     public void handleSubmitButton() {
         submitButton.setOnAction(event -> {
+            // Retrieve input values
             String id = findExistingID();
             String name = nameField.getText();
             int age = Integer.parseInt(ageField.getText());
@@ -126,6 +134,7 @@ public class CreateTreatmentCourseFormController {
             String treatmentPlan = treatmentPlanField.getText();
             String progressNotes = progressNotesField.getText();
 
+            // Validate input values
             if (name == null || age == 0 || gender == null || startDate == null || endDate == null || courseName == null || treatmentPlan == null || progressNotes == null) {
                 displayErrorMessage();
             }
@@ -133,6 +142,7 @@ public class CreateTreatmentCourseFormController {
             // Write the new record to the file and jump to the dashboard
             try (FileWriter writer = new FileWriter(FILE_PATH, true)) {
                 writer.write(id + "," + name + "," + age + "," + gender + "," + startDate + "," + endDate + "," + courseName + "," + treatmentPlan + "," + progressNotes + "\n");
+                // Create an instance of DashboardController and load the dashboard view
                 DashboardController dashboardController = new DashboardController();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 dashboardController.loadDashboardView(stage);
@@ -142,6 +152,7 @@ public class CreateTreatmentCourseFormController {
             }
         });
     }
+
 
     public static String findExistingID() {
 
@@ -178,24 +189,27 @@ public class CreateTreatmentCourseFormController {
     }
 
     private void showExitConfirmation() {
+        // Create an exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
-        alert.setHeaderText("Exit Confirmation");
-        alert.setContentText("Are you sure you want to exit the app?");
+        alert.setHeaderText("Unsaved Changes");
+        alert.setContentText("Are you sure you want to exit without saving?");
 
         ButtonType exitButton = new ButtonType("Exit");
         ButtonType cancelButton = new ButtonType("Cancel");
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Show the alert and handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
-                System.exit(1); // Replace this with your application's exit logic
+                System.exit(0); // Replace this with your application's exit logic
             }
         });
     }
 
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Saved");
@@ -203,7 +217,9 @@ public class CreateTreatmentCourseFormController {
         alert.show();
     }
 
+
     private void displayErrorMessage() {
+        // Display an error message dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Empty Information");

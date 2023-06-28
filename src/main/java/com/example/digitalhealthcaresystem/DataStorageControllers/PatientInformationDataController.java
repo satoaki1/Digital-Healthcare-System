@@ -37,31 +37,42 @@ public class PatientInformationDataController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 
     @FXML
     public void openAddNewPage(ActionEvent event) {
+        // Instantiate the CreatePatientInformationFormController
         CreatePatientInformationFormController controller = new CreatePatientInformationFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCreatePatientInformationForm method to display the create patient information form
         controller.showCreatePatientInformationForm(stage);
     }
 
     public void initialize() {
+        // Initialize the controller
         updatePatientList();
 
         listView.setOnMouseClicked(mouseEvent -> {
@@ -91,6 +102,7 @@ public class PatientInformationDataController {
                             // Get the controller
                             ViewPatientInformationFormController viewPatientInformationFormController = loader.getController();
 
+                            // Call the searchPatient method to display the patient's information
                             viewPatientInformationFormController.searchPatient(patientName);
                             break;
                         } catch (IOException e) {
@@ -104,7 +116,7 @@ public class PatientInformationDataController {
         });
     }
 
-    // Updating the patient list by clearing the current items in listview then opens patients.txt, reads each line, and adds each line as a new item in the listView.
+    // Updating the patient list by clearing the current items in the ListView and adding each line from patients.txt as a new item in the listView.
     private void updatePatientList() {
         listView.getItems().clear();
 

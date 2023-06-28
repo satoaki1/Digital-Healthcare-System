@@ -79,28 +79,28 @@ public class ViewTreatmentCourseFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
-    public void handleBackButton(ActionEvent event) {
-        
-    }
-
-
     @FXML
-    public void handleExitButton() {
-        exitButton.setOnAction(event1 -> {
-            System.exit(1);
-        });
+    public void handleExitButton(ActionEvent event) {
+        // Exit the application
+        System.exit(1);
     }
 
     @FXML
@@ -145,6 +145,7 @@ public class ViewTreatmentCourseFormController {
 
     @FXML
     public void handleAddNewButton() {
+        // Handle the action event for the "Add New" button
         addNewButton.setOnAction(event -> {
             CreateTreatmentCourseFormController createTreatmentCourseFormController = new CreateTreatmentCourseFormController();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -154,6 +155,7 @@ public class ViewTreatmentCourseFormController {
 
     @FXML
     public void handleListButton() {
+        // Handle the action event for the "List" button
         listButton.setOnAction(event -> {
             TreatmentCourseDataController treatmentCourseDataController = new TreatmentCourseDataController();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -163,6 +165,7 @@ public class ViewTreatmentCourseFormController {
 
     @FXML
     public void handleEditButton() {
+        // Handle the action event for the "Edit" button
         editButton.setOnAction(event -> {
             EditTreatmentCourseFormController editTreatmentCourseFormController = new EditTreatmentCourseFormController();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -172,6 +175,7 @@ public class ViewTreatmentCourseFormController {
 
     @FXML
     public void handleDeleteButton() {
+        // Handle the action event for the "Delete" button
         deleteButton.setOnAction(event -> {
             DeleteTreatmentCourseFormController deleteTreatmentCourseFormController = new DeleteTreatmentCourseFormController();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -180,6 +184,7 @@ public class ViewTreatmentCourseFormController {
     }
 
     public void initializeView() {
+        // Initialize the view by resetting the labels
         idLabel.setText("");
         nameLabel.setText("");
         patientAgeLabel.setText("");
@@ -197,6 +202,7 @@ public class ViewTreatmentCourseFormController {
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 if (data[1].equals(patientName)) {
+                    // Extract patient data from the array
                     String id = data[0];
                     String name = data[1];
                     String age = data[2];
@@ -207,6 +213,7 @@ public class ViewTreatmentCourseFormController {
                     String detailsOfPlan = data[7];
                     String notes = data[8];
 
+                    // Update the UI labels with patient data
                     idLabel.setText(id);
                     nameLabel.setText(name);
                     patientAgeLabel.setText(age);
@@ -217,13 +224,14 @@ public class ViewTreatmentCourseFormController {
                     detailsOfPlanLabel.setText(detailsOfPlan);
                     notesLabel.setText(notes);
 
-                    break; // Exit the method once a match is found
+                    break; // Exit the loop once a match is found
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     public void showViewTreatmentCourseForm(Stage stage) {

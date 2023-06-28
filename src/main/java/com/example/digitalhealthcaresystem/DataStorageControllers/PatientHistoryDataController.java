@@ -2,7 +2,6 @@ package com.example.digitalhealthcaresystem.DataStorageControllers;
 
 import com.example.digitalhealthcaresystem.CalenderFormController;
 import com.example.digitalhealthcaresystem.DashboardController;
-import com.example.digitalhealthcaresystem.PatientForms.ViewPatientInformationFormController;
 import com.example.digitalhealthcaresystem.PatientHistoryForms.CreatePatientHistoryFormController;
 import com.example.digitalhealthcaresystem.PatientHistoryForms.ViewPatientHistoryFormController;
 import javafx.event.ActionEvent;
@@ -41,24 +40,32 @@ public class PatientHistoryDataController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Instantiate the DashboardController
         DashboardController dashboardController = new DashboardController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the loadDashboardView method to go to the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Instantiate the CalenderFormController
         CalenderFormController calenderFormController = new CalenderFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCalenderForm method to display the calendar form
         calenderFormController.showCalenderForm(stage);
     }
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Exit the application
         System.exit(1);
     }
 
     public void initialize() {
+        // Initialize the controller
         updatePatientHistoryList();
 
         listView.setOnMouseClicked(mouseEvent -> {
@@ -120,8 +127,11 @@ public class PatientHistoryDataController {
 
     @FXML
     public void openAddNewPage(ActionEvent event) {
+        // Instantiate the CreatePatientHistoryFormController
         CreatePatientHistoryFormController createPatientHistoryFormController = new CreatePatientHistoryFormController();
+        // Get the stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        // Call the showCreatePatientHistoryForm method to display the create patient history form
         createPatientHistoryFormController.showCreatePatientHistoryForm(stage);
     }
 
@@ -138,6 +148,7 @@ public class PatientHistoryDataController {
             // Set the scene on the primary stage
             stage.setScene(scene);
             stage.setTitle("Digital Healthcare System");
+
             // Show the primary stage
             stage.show();
         } catch (IOException e) {

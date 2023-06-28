@@ -60,6 +60,7 @@ public class EditPatientHistoryFormController {
 
     @FXML
     public void handleGoToDashboardButton(ActionEvent event) {
+        // Display unsaved changes confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Unsaved Changes");
@@ -70,8 +71,10 @@ public class EditPatientHistoryFormController {
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
+                // Create an instance of DashboardController and load the dashboard view
                 DashboardController dashboardController = new DashboardController();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 dashboardController.loadDashboardView(stage);
@@ -81,6 +84,7 @@ public class EditPatientHistoryFormController {
 
     @FXML
     public void handleGoToCalenderButton(ActionEvent event) {
+        // Display exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Exit Confirmation");
@@ -91,8 +95,10 @@ public class EditPatientHistoryFormController {
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
+                // Create an instance of CalenderFormController and show the calendar form
                 CalenderFormController calenderFormController = new CalenderFormController();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 calenderFormController.showCalenderForm(stage);
@@ -102,23 +108,35 @@ public class EditPatientHistoryFormController {
 
     @FXML
     public void handleExitButton(ActionEvent event) {
+        // Show exit confirmation dialog
         showExitConfirmation();
     }
 
     @FXML
     public void initialize() {
+        // Update the ID choice box
         updateIDList();
     }
 
 
+
     public void handleSaveButton(ActionEvent event) {
+        // Create an instance of DashboardController
         DashboardController dashboardController = new DashboardController();
+
+        // Get the current stage from the event source
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Get the selected patient history ID from the choice box
         String patientHistoryID = choiceBox.getSelectionModel().getSelectedItem();
 
+        // Read patient history list from the file
         List<String[]> patientHistories = readPatientHistoryList(FILE_PATH);
+
+        // Find the patient history with the matching ID
         for (String[] patientHistory : patientHistories) {
             if (patientHistory[0].equals(patientHistoryID)) {
+                // Retrieve patient information from the input fields
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
                 String gender = genderField.getText();
@@ -128,10 +146,13 @@ public class EditPatientHistoryFormController {
                 String observations = observationsField.getText();
                 String treatmentCourse = treatmentCourseField.getText();
 
-                if (name == null || age == 0 || gender == null || admissionHistory == null || pastSymptoms == null || majorComplaints == null || observations == null || treatmentCourse == null) {
+                // Validate input fields
+                if (name == null || age == 0 || gender == null || admissionHistory == null ||
+                        pastSymptoms == null || majorComplaints == null || observations == null || treatmentCourse == null) {
                     displayErrorMessage();
                 }
 
+                // Display details confirmation alert with patient details
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Details Confirmation");
                 alert.setHeaderText("Please check before save.");
@@ -149,8 +170,11 @@ public class EditPatientHistoryFormController {
                 ButtonType yesButton = new ButtonType("Yes");
                 ButtonType noButton = new ButtonType("No");
                 alert.getButtonTypes().setAll(yesButton, noButton);
+
+                // Handle the user's response
                 alert.showAndWait().ifPresent(buttonType -> {
                     if (buttonType == yesButton) {
+                        // Update patient history with new information and display success message
                         patientHistory[0] = patientHistoryID;
                         patientHistory[1] = name;
                         patientHistory[2] = String.valueOf(age);
@@ -163,13 +187,19 @@ public class EditPatientHistoryFormController {
                         displaySuccessMessage();
                     }
                 });
+
                 break;
             }
         }
+
+        // Write the updated patient history list to the file
         writePatientHistoryList(patientHistories, FILE_PATH);
+
+        // Load the dashboard view
         dashboardController.loadDashboardView(stage);
     }
 
+    // Update the ID choice box by clearing it and adding new items from the file
     private void updateIDList() {
         choiceBox.getItems().clear();
 
@@ -187,6 +217,7 @@ public class EditPatientHistoryFormController {
         }
     }
 
+    // Read the patient history list from the file and return it as a List of String arrays
     private List<String[]> readPatientHistoryList(String filename) {
         List<String[]> patientHistoryList = new ArrayList<>();
 
@@ -202,36 +233,40 @@ public class EditPatientHistoryFormController {
                 e.printStackTrace();
             }
         }
+
         return patientHistoryList;
     }
 
+    // Write the patient history list to the file
     public void writePatientHistoryList(List<String[]> patients, String fileName) {
         FileWriter fileWriter = null;
         try {
             File file = new File(fileName);
             fileWriter = new FileWriter(file);
 
-            // process content line by line
+            // Process each patient line by line and write to the file
             for (String[] patient : patients) {
                 fileWriter.append(String.join(",", patient));
                 fileWriter.append("\n");
             }
         } catch (Exception e) {
-
-            // handle exception
+            // Handle exception
             e.printStackTrace();
         } finally {
             try {
+                // Flush and close the file writer
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException e) {
-                // handle exception
+                // Handle exception
                 e.printStackTrace();
             }
         }
     }
 
+
     private void showExitConfirmation() {
+        // Create an exit confirmation alert
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Exit Confirmation");
         alert.setHeaderText("Unsaved Changes");
@@ -242,6 +277,7 @@ public class EditPatientHistoryFormController {
 
         alert.getButtonTypes().setAll(exitButton, cancelButton);
 
+        // Show the alert and handle the user's response
         alert.showAndWait().ifPresent(buttonType -> {
             if (buttonType == exitButton) {
                 System.exit(0); // Replace this with your application's exit logic
@@ -250,6 +286,7 @@ public class EditPatientHistoryFormController {
     }
 
     private void displaySuccessMessage() {
+        // Display a success message dialog
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Success");
         alert.setHeaderText("Information Saved");
@@ -257,7 +294,9 @@ public class EditPatientHistoryFormController {
         alert.show();
     }
 
+
     private void displayErrorMessage() {
+        // Display an error message dialog
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Empty Information");
