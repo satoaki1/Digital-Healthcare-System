@@ -38,7 +38,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="patientInfoField" layoutX="16.0" layoutY="43.0" prefHeight="27.0" prefWidth="353.0" promptText="Enter Patient ID or Name" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" />
+                  <TextField fx:id="patientInfoField" layoutX="16.0" layoutY="43.0" prefHeight="27.0" prefWidth="353.0" promptText="Enter Patient ID" style="-fx-background-radius: 13.5 13.5 13.5 13.5;" />
                   <TextArea fx:id="newDiagnosisArea" layoutX="215.0" layoutY="91.0" prefHeight="200.0" prefWidth="235.0" promptText="Enter Current Diagnosis" />
                   <Button layoutX="305.5" layoutY="304.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="25.0" prefWidth="54.0" style="-fx-background-radius: 9 9 9 9; -fx-background-color: #6633CC;" text="Save" textFill="WHITE">
                      <font>
@@ -115,7 +115,7 @@
                         <Font name="Arial Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Label fx:id="diagnosisLabel" layoutX="16.0" layoutY="272.0" maxWidth="180.0" maxHeight="30.0" wrapText="true" text="Diagnosis">
+                  <Label fx:id="diagnosisLabel" layoutX="16.0" layoutY="272.0" maxHeight="30.0" maxWidth="180.0" text="Diagnosis" wrapText="true">
                      <font>
                         <Font name="Arial" size="10.0" />
                      </font>
