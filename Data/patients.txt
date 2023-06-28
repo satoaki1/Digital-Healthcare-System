@@ -21,6 +21,6 @@ P022,Micheal Jordan,45,AB+,99,198,Male,125,Business Man,Chicago Michigan USA,011
 P023,Draymond Green,31,O+,104,198,Male,130,Basketball Player,Oracle San Francisco U.S.,03344445555
 P024,Stephen Curry,35,B+,86,191,Male,110,Basketball Player,Akron Ohio San Francisco U.S.,0304567878
 P025,Mohamed Fahad Farhan,21,B+,180,70,Male,110,Student,Bandar Sunway Subang Jaya Selangor Malaysia,0345678989
-P026,Aaron Peter,20,O-,170,73,Male,100,Student,Bandar Sunway Subang Jaya Selangor malaysia,01123456789
-P027,Ethan Wang,20,A+,170,60,Male,100,Student,lkjhlkjhkljhlkjh,012344556789
+P026,Aaron Gordon,20,O-,170,65,Male,100,Student,Bandar Sunway Subang Jaya Selangor malaysia,01123456789
+P027,Tom Hanks,20,A+,170,60,Male,100,Student,lkjhlkjhkljhlkjh,012344556789
 P028,Noah's Ark,950,B-,400,2,Male,100,Farmer,Methopotamia Irac,01611246950
