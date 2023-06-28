@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.TreatmentCourseForms.DeleteTreatmentCourseFormController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #DCDCDC;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.digitalhealthcaresystem.TreatmentCourseForms.DeleteTreatmentCourseFormController">
     <children>
         <Pane layoutX="3.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="594.0" style="-fx-background-color: #6633CC;" />
         <Pane layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="558.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 20 20 20;">
             <children>
                 <Pane layoutX="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="470.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 0 20 20 0;">
                     <children>
-                        <Text fill="#6633cc" layoutX="16.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medical Review" textAlignment="CENTER">
+                        <Text fill="#6633cc" layoutX="23.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Information" textAlignment="CENTER">
                             <font>
                                 <Font name="Arial Bold" size="20.0" />
                             </font>
                         </Text>
-                        <ListView fx:id="listView" fixedCellSize="40.0" layoutX="24.0" layoutY="68.0" prefHeight="264.0" prefWidth="421.0" style="-fx-background-color: #f0f0f0; -fx-font-size: 13px;"/>
+                        <ListView fx:id="listView" fixedCellSize="40.0" layoutX="24.0" layoutY="68.0" prefHeight="264.0" prefWidth="421.0" style="-fx-background-color: #f0f0f0; -fx-font-size: 13px;" />
                     </children>
                 </Pane>
                 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="87.0" style="-fx-background-color: DCDCDC; -fx-background-radius: 20 0 0 20;">

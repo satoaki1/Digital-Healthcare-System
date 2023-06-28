@@ -165,18 +165,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="backButton" layoutX="20.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleGoToCalenderButton" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 3 3 3 3;" textFill="#6633cc">
-                     <font>
-                        <Font name="Arial Bold" size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/back button.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                   <ImageView fitHeight="54.0" fitWidth="70.0" layoutX="17.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/MedicalMark.png" />

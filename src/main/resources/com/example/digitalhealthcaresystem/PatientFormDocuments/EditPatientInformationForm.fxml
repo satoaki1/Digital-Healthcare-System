@@ -12,12 +12,12 @@
          <children>
             <Pane layoutX="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="470.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 0 20 20 0;">
                <children>
-                  <Text fill="#6633cc" layoutX="16.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Information" textAlignment="CENTER">
+                  <Text fill="#6633cc" layoutX="16.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Patient Information" textAlignment="CENTER">
                      <font>
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Text>
-                  <ChoiceBox fx:id="choiceBox" layoutX="308.0" layoutY="11.0" prefHeight="26.0" prefWidth="65.0" />
+                  <ChoiceBox fx:id="choiceBox" layoutX="308.0" layoutY="20.0" prefHeight="26.0" prefWidth="65.0" />
                   <TextField fx:id="nameField" layoutX="86.0" layoutY="64.0" prefHeight="27.0" prefWidth="140.0" promptText="Name" />
                   <Text layoutX="46.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
                   <TextField fx:id="ageField" layoutX="308.0" layoutY="64.0" prefHeight="27.0" prefWidth="140.0" promptText="Age" />

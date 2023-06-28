@@ -12,7 +12,7 @@
             <children>
                 <Pane layoutX="88.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="470.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 0 20 20 0;">
                     <children>
-                        <Text fill="#6633cc" layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Patient History">
+                        <Text fill="#6633cc" layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Patient History">
                             <font>
                                 <Font name="Arial Bold" size="20.0" />
                             </font>
