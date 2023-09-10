@@ -33,9 +33,7 @@ We are required to create a simple Electronic Medical Record (EMR) System to kee
 5.	Diagnosis
 6.	Procedure and Medicine
      
-The intended system should maximize the implementation of object-oriented concepts such as instantiation, encapsulation, inheritance, and polymorphism. Below is the UML skeleton class diagram for a broad idea of the class relationship:
-
-![sample of class relationships in Electronic Medical Record (EMR) System](UMLofDigitalHealthcareSystem.png)
+The intended system should maximize the implementation of object-oriented concepts such as instantiation, encapsulation, inheritance, and polymorphism. 
 
 The following are the basic specifications for the system (non-exhaustive):
 1.	The system is created using 5 forms: Patient Form, Medical History Form, Treatment Course Form, and two more forms using Java FX/Swing Application.
